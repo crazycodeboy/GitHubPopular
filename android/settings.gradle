@@ -1,0 +1,3 @@
+rootProject.name = 'MostPopularInGitHub'
+
+include ':app'
