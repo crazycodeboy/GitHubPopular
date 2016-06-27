@@ -39,19 +39,37 @@ var MovieCell = React.createClass({
     }
     return (
       <View>
+        <TouchableElement
+          onPress={this.props.onSelect}
+          onShowUnderlay={this.props.onHighlight}
+          onHideUnderlay={this.props.onUnhighlight}
+          >
           <View style={styles.row}>
-              <Text style={styles.name}>
-              {this.props.item.name}
+              <Text style={styles.title}>
+                {this.props.item.name}
+              </Text>
+              <Text style={styles.description}>
+                {this.props.item.stargazers_count}
+              </Text>
+              <Text style={styles.description}>
+                {this.props.item.description}
               </Text>
           </View>
+        </TouchableElement>
       </View>
+
     );
   }
 });
 
 var styles = StyleSheet.create({
-  name: {
-    fontSize: 16,
+  title: {
+    fontSize: 18,
+    marginBottom: 2,
+
+  },
+  description: {
+    fontSize: 12,
     marginBottom: 2,
 
   },

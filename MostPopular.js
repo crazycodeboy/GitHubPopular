@@ -4,19 +4,20 @@
  * @flow
  */
 'use strict';
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  ListView,
-  Text,
-  View
-} from 'react-native';
+var React = require('react');
 var ReactNative = require('react-native');
-var ItemCell=require('./ItemCell');
-
-
-var API_URL ='https://api.github.com/search/repositories?q=javascript&sort=stars';
+var {
+  ActivityIndicator,
+  ListView,
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+} = ReactNative;
+var RepositoryCell=require('./RepositoryCell');
+var dismissKeyboard=require('dismissKeyboard');
+var RepositoryDetail=require('./RepositoryDetail')
+var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
 var resultData=[];
 var MostPopular=React.createClass({
   getInitialState: function(){
@@ -56,14 +57,31 @@ var MostPopular=React.createClass({
   getDataSource:function(items:Array<any>):ListView.DataSource{
     return this.state.dataSource.cloneWithRows(items);
   },
+  onSelectRepository:function(item:Object) {
+    if (Platform.OS==='ios') {
+      this.props.navigator.push({
+        title:item.name,
+        component:RepositoryDetail,
+        passProps:{item},
+      });
+    }else {
+      dismissKeyboard();
+      this.props.navigator.push({
+        title:item.name,
+        name:'item',
+        item:item,
+      });
+    }
+  },
   renderRow:function(
     item:Object,
     sectionID:number|string,
     rowID:number|string,
   ){
     return(
-      <ItemCell
+      <RepositoryCell
         key={item.id}
+        onSelect={()=>this.onSelectRepository(item)}
         item={item}/>
     );
   },
@@ -90,9 +108,7 @@ var MostPopular=React.createClass({
       dataSource={this.state.dataSource}/>;
     return (
       <View style={styles.container}>
-        <Text>-----start------</Text>
         {content}
-        <Text>------end-------</Text>
       </View>
     );
   }
@@ -101,8 +117,7 @@ var styles = StyleSheet.create({
   container: {
     flex:1,
     alignItems: 'stretch',
-    backgroundColor: 'yellow',
-  },
+},
   separator: {
     height: 1,
     backgroundColor: '#eeeeee',

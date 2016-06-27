@@ -4,8 +4,6 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-React	/Users/penn/Desktop/React Native/MostPopularInGItHub/ItemCell.js	/^var React = require('react');$/;"	variable	line:18
-ReactNative	/Users/penn/Desktop/React Native/MostPopularInGItHub/ItemCell.js	/^var ReactNative = require('react-native');$/;"	variable	line:19
-render	/Users/penn/Desktop/React Native/MostPopularInGItHub/ItemCell.js	/^  render: function() {$/;"	function	line:35
-MovieCell	/Users/penn/Desktop/React Native/MostPopularInGItHub/ItemCell.js	/^var MovieCell = React.createClass({$/;"	variable	line:34
-styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/ItemCell.js	/^var styles = StyleSheet.create({$/;"	variable	line:52
+ReactNative	/Users/penn/Desktop/React Native/MostPopularInGItHub/RepositoryDetail.js	/^var ReactNative=require('react-native');$/;"	variable	line:7
+render	/Users/penn/Desktop/React Native/MostPopularInGItHub/RepositoryDetail.js	/^  render:function() {$/;"	function	line:17
+RepositoryDetail	/Users/penn/Desktop/React Native/MostPopularInGItHub/RepositoryDetail.js	/^var RepositoryDetail=React.createClass({$/;"	variable	line:16
