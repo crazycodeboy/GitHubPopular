@@ -19,6 +19,9 @@ var RepositoryDetail=React.createClass({
       <ScrollView >
         <View >
           <Text>{this.props.item.name}</Text>
+          <Text>{this.props.item.description}</Text>
+          <Text>{this.props.item.stargazers_count}</Text>
+          <Text>{this.props.item.owner.login}</Text>
         </View>
       </ScrollView>
     );
