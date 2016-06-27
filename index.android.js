@@ -12,24 +12,16 @@ import {
   Text,
   View
 } from 'react-native';
-var API_URL ='https://api.github.com/search/repositories?q=javascript&sort=stars'';
+var MostPopular=require('./MostPopular.js');
 class MostPopularInGitHub extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+      // <View style={styles.container}>
+        <MostPopular />
+      // </View>
     );
   }
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -38,16 +30,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  centerText:{
+    alignItems:'center'
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  noItemsText:{
+    marginTop:80,
+    color:'#888888',
+  }
 });
 
 AppRegistry.registerComponent('MostPopularInGitHub', () => MostPopularInGitHub);
