@@ -27,6 +27,10 @@ react-native-drawer-layout	/Users/penn/Desktop/React Native/MostPopularInGItHub/
 ReactNative	/Users/penn/Desktop/React Native/MostPopularInGItHub/SettingPage.js	/^var ReactNative=require('react-native');$/;"	variable	line:7
 render	/Users/penn/Desktop/React Native/MostPopularInGItHub/SettingPage.js	/^  render:function() {$/;"	function	line:17
 SettingPage	/Users/penn/Desktop/React Native/MostPopularInGItHub/SettingPage.js	/^var SettingPage=React.createClass({$/;"	variable	line:16
+_handleNavigationRequest	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  _handleNavigationRequest: function() {$/;"	function	line:22
+render	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  render:function() {$/;"	function	line:26
+DrawerLayout	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^var DrawerLayout = require('react-native-drawer-layout')$/;"	variable	line:18
+drawerStyles.drawer	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^var drawerStyles = {$/;"	property	line:57
 React	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^var React = require('react');$/;"	variable	line:7
 ReactNative	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^var ReactNative = require('react-native');$/;"	variable	line:8
 RepositoryCell	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^var RepositoryCell=require('.\/RepositoryCell');$/;"	variable	line:20
@@ -39,12 +43,8 @@ loadData	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^ 
 onRefresh	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^  onRefresh :function() {$/;"	function	line:61
 getDataSource	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^  getDataSource:function(items:Array<any>):ListView.DataSource{$/;"	function	line:64
 onSelectRepository	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^  onSelectRepository:function(item:Object) {$/;"	function	line:67
-renderRow	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^  renderRow:function($/;"	function	line:83
-renderSeparator	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^  renderSeparator: function($/;"	function	line:95
-render	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^  render() {$/;"	function	line:109
+renderRow	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^  renderRow:function($/;"	function	line:84
+renderSeparator	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^  renderSeparator: function($/;"	function	line:96
+render	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^  render() {$/;"	function	line:110
 MostPopular	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^var MostPopular=React.createClass({$/;"	variable	line:26
-styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^var styles = StyleSheet.create({$/;"	variable	line:141
-onClick	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  onClick:function(){$/;"	function	line:23
-render	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  render:function() {$/;"	function	line:26
-DrawerLayout	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^var DrawerLayout = require('react-native-drawer-layout')$/;"	variable	line:18
-drawerStyles.drawer	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^var drawerStyles = {$/;"	property	line:56
+styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^var styles = StyleSheet.create({$/;"	variable	line:142

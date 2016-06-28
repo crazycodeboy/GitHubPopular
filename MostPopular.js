@@ -6,8 +6,8 @@
 'use strict';
 var React = require('react');
 var ReactNative = require('react-native');
-var DrawerLayout = require('react-native-drawer-layout')
-var SettingPage=require('./SettingPage')
+// var DrawerLayout = require('react-native-drawer-layout')
+// var SettingPage=require('./SettingPage')
 var {
   ActivityIndicator,
   ListView,
@@ -66,6 +66,7 @@ var MostPopular=React.createClass({
   },
   onSelectRepository:function(item:Object) {
     if (Platform.OS==='ios') {
+      this.props.drawer.refs.drawer.drawerLockMode='locked-open';
       this.props.navigator.push({
         title:item.name,
         component:RepositoryDetail,
@@ -125,16 +126,16 @@ var MostPopular=React.createClass({
          />}
       />;
     return (
-      <DrawerLayout
-        ref="drawer"
-        drawerWidth={260}
-        drawerPosition={DrawerLayout.positions.Left}
-        renderNavigationView={() => <SettingPage />}
-        >
+      // <DrawerLayout
+      //   ref="drawer"
+      //   drawerWidth={260}
+      //   drawerPosition={DrawerLayout.positions.Left}
+      //   renderNavigationView={() => <SettingPage />}
+      //   >
         <View style={styles.container} >
           {content}
         </View>
-      </DrawerLayout>
+      // </DrawerLayout>
     );
   }
 });

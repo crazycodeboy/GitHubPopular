@@ -18,27 +18,28 @@ import {
 var DrawerLayout = require('react-native-drawer-layout')
 var SettingPage=require('./SettingPage')
 var MostPopular=require('./MostPopular')
-
 var MostPopularInGitHub=React.createClass({
-  onClick:function(){
-    this.refs.drawer.openDrawer();
+  _handleNavigationRequest: function() {
+    // this.refs.nav.push(otherRoute);
+    this.refs.nav;
   },
   render:function() {
     return (
-      // <DrawerLayout
-      //   ref="drawer"
-      //   drawerWidth={260}
-      //   drawerPosition={DrawerLayout.positions.Left}
-      //   renderNavigationView={() => <SettingPage />}
-      //   >
+      <DrawerLayout
+        ref="drawer"
+        drawerWidth={260}
+        drawerPosition={DrawerLayout.positions.Left}
+        renderNavigationView={() => <SettingPage />}
+        >
         <NavigatorIOS
+          ref="nav"
           style={styles.container}
-          
           initialRoute={{
             title:`MostPopular`,
             component:MostPopular,
+            passProps:{drawer:this}
           }}/>
-      // </DrawerLayout>
+      </DrawerLayout>
     );
   }
 });
