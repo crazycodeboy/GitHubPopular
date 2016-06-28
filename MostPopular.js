@@ -6,6 +6,8 @@
 'use strict';
 var React = require('react');
 var ReactNative = require('react-native');
+var DrawerLayout = require('react-native-drawer-layout')
+var SettingPage=require('./SettingPage')
 var {
   ActivityIndicator,
   ListView,
@@ -123,9 +125,16 @@ var MostPopular=React.createClass({
          />}
       />;
     return (
-      <View style={styles.container}>
-        {content}
-      </View>
+      <DrawerLayout
+        ref="drawer"
+        drawerWidth={260}
+        drawerPosition={DrawerLayout.positions.Left}
+        renderNavigationView={() => <SettingPage />}
+        >
+        <View style={styles.container} >
+          {content}
+        </View>
+      </DrawerLayout>
     );
   }
 });
