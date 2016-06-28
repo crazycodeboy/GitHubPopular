@@ -20,4 +20,4 @@ renderRow	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^
 renderSeparator	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^  renderSeparator: function($/;"	function	line:93
 render	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^  render() {$/;"	function	line:107
 MostPopular	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^var MostPopular=React.createClass({$/;"	variable	line:24
-styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^var styles = StyleSheet.create({$/;"	variable	line:127
+styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/MostPopular.js	/^var styles = StyleSheet.create({$/;"	variable	line:132

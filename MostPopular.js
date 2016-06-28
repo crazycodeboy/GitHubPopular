@@ -115,6 +115,11 @@ var MostPopular=React.createClass({
          <RefreshControl
            refreshing={this.state.isLoading}
            onRefresh={()=>this.onRefresh()}
+           tintColor="#ff0000"
+            title="Loading..."
+            titleColor="#00ff00"
+            colors={['#ff0000', '#00ff00', '#0000ff']}
+            progressBackgroundColor="#ffff00"
          />}
       />;
     return (
