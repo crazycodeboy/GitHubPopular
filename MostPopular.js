@@ -11,13 +11,15 @@ var {
   ListView,
   Platform,
   StyleSheet,
+  RefreshControl,
   Text,
   View,
 } = ReactNative;
 var RepositoryCell=require('./RepositoryCell');
 var dismissKeyboard=require('dismissKeyboard');
 var RepositoryDetail=require('./RepositoryDetail')
-var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
+// var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
+var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars';
 var resultData=[];
 var MostPopular=React.createClass({
   getInitialState: function(){
@@ -47,12 +49,15 @@ var MostPopular=React.createClass({
     }).then((responseData)=>{
       resultData=responseData.items;
       this.setState({
-        isLoading:true,
+        isLoading:false,
         isLodingFail:false,
         dataSource:this.getDataSource(responseData.items),
       });
     })
     .done();
+  },
+  onRefresh :function() {
+    this.loadData();
   },
   getDataSource:function(items:Array<any>):ListView.DataSource{
     return this.state.dataSource.cloneWithRows(items);
@@ -105,7 +110,13 @@ var MostPopular=React.createClass({
       ref="listView"
       renderRow={this.renderRow}
       renderSeparator={this.renderSeparator}
-      dataSource={this.state.dataSource}/>;
+      dataSource={this.state.dataSource}
+      refreshControl={
+         <RefreshControl
+           refreshing={this.state.isLoading}
+           onRefresh={()=>this.onRefresh()}
+         />}
+      />;
     return (
       <View style={styles.container}>
         {content}
