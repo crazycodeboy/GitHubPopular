@@ -39,15 +39,26 @@ var MostPopularInGitHub=React.createClass({
         initialRoute={{
           title:`MostPopular`,
           component:MostPopular,
-        }}/>;
+        }}/>
+    var favoriteTab=
+      <NavigatorIOS
+        ref="nav"
+        style={styles.container}
+        initialRoute={{
+          title:`Favorite`,
+          component:FavoritePage,
+        }}/>
+
+
     return (
       <TabBarIOS
-        tintColor="blue"
+        tintColor="lightgreen"
         unselectedTintColor="lightslategray"
         barTintColor="ghostwhite">
         <TabBarIOS.Item
           title="Popular"
-          systemIcon="top-rated"
+          icon={require('./res/images/ic_whatshot_black_36dp.png')}
+          selectedIcon={require('./res/images/ic_whatshot_black_36dp.png')}
           selected={this.state.selectedTab === 'popularTab'}
           onPress={()=>this.onSelected('popularTab')}
           >
@@ -55,16 +66,17 @@ var MostPopularInGitHub=React.createClass({
         </TabBarIOS.Item>
         <TabBarIOS.Item
           title="Favorite"
-          systemIcon="favorites"
+          icon={require('./res/images/ic_favorite_black_36dp.png')}
+          selectedIcon={require('./res/images/ic_favorite_black_36dp.png')}
           selected={this.state.selectedTab === 'favoriteTab'}
           onPress={()=>this.onSelected('favoriteTab')}
           >
-          <FavoritePage/>
+          {favoriteTab}
         </TabBarIOS.Item>
         <TabBarIOS.Item
-          renderAsOriginal
           title="About"
-          systemIcon="bookmarks"
+          icon={require('./res/images/ic_hdr_weak_black_36dp.png')}
+          selectedIcon={require('./res/images/ic_hdr_weak_black_36dp.png')}
           selected={this.state.selectedTab === 'aboutTab'}
           onPress={()=>this.onSelected('aboutTab')}
           >

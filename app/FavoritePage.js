@@ -14,11 +14,16 @@ var{
 var FavoritePage=React.createClass({
   render:function() {
     return(
-        <View style={{flex: 1, backgroundColor: '#fff'}}>
-          <Text>FavoritePage</Text>
-          <Text>FavoritePage</Text>
+        <View style={styles.container}>
+          <Text style={{backgroundColor:'yellow',textAlign: 'center'}}>FavoritePage</Text>
         </View>
     );
   },
+});
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 64,
+},
 });
 module.exports=FavoritePage
