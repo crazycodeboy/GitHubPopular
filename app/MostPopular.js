@@ -66,7 +66,6 @@ var MostPopular=React.createClass({
   },
   onSelectRepository:function(item:Object) {
     if (Platform.OS==='ios') {
-      this.props.drawer.refs.drawer.drawerLockMode='locked-open';
       this.props.navigator.push({
         title:item.name,
         component:RepositoryDetail,

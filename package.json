@@ -8,7 +8,7 @@
   "dependencies": {
     "react": "15.1.0",
     "react-native": "0.28.0",
-    
+    "react-native-android-tablayout": "^0.3.0",
     "react-native-drawer-layout": "^1.0.0"
   }
 }
