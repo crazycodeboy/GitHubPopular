@@ -16,7 +16,7 @@ var{
 var RepositoryDetail=React.createClass({
   render:function() {
     return(
-      <ScrollView >
+      <ScrollView style={styles.container}>
         <View >
           <Text>{this.props.item.name}</Text>
           <Text>{this.props.item.description}</Text>
@@ -27,4 +27,10 @@ var RepositoryDetail=React.createClass({
     );
   },
 });
+const styles=StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor:'#ffffff'
+  },
+})
 module.exports=RepositoryDetail

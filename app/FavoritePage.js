@@ -23,7 +23,7 @@ var FavoritePage=React.createClass({
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 64,
+    // paddingTop: 64,
 },
 });
 module.exports=FavoritePage

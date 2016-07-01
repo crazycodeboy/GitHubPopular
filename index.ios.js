@@ -11,6 +11,8 @@ import {
   StyleSheet,
   NavigatorIOS,
   Navigator,
+  Platform,
+  TouchableOpacity,
   Text,
   TabBarIOS,
   View
@@ -31,28 +33,93 @@ var MostPopularInGitHub=React.createClass({
       selectedTab:object,
     })
   },
+  _renderScene(route, navigator) {
+    let Component = route.component;
+    return (
+      <Component {...route.params} navigator={navigator} />
+    );
+  },
+  _renderNavBar(defaultTitle) {
+    var routeMapper = {
+      LeftButton(route, navigator, index, navState) {
+        if(index > 0) {
+          return (
+            <TouchableOpacity
+              onPress={() => navigator.pop()}
+              style={styles.button}>
+              <Text style={styles.buttonText}>Back</Text>
+            </TouchableOpacity>
+          );
+        } else {
+          return null
+          // (
+          //   <TouchableOpacity
+          //     onPress={() => navigator.pop()}
+          //     style={styles.button}>
+          //     <Text style={styles.buttonText}>Logo</Text>
+          //   </TouchableOpacity>
+          // );
+        }
+      },
+      RightButton(route, navigator, index, navState) {
+        if(index > 0 && route.rightButton) {
+          return (
+            <TouchableOpacity
+              onPress={() => navigator.pop()}
+              style={styles.button}>
+              <Text style={styles.buttonText}></Text>
+            </TouchableOpacity>
+          );
+        } else {
+          return null
+        }
+
+      },
+      Title(route, navigator, index, navState) {
+        return (
+          <View style={styles.title}>
+            <Text style={styles.buttonText}>{route.title ? route.title : defaultTitle}</Text>
+          </View>
+        );
+      }
+    };
+    return (
+      <Navigator.NavigationBar
+        style={styles.navBar}
+        routeMapper={routeMapper}
+      />
+    );
+  },
   render:function() {
     var popularTab=
-      <NavigatorIOS
+      <Navigator
         ref="nav"
         style={styles.container}
         initialRoute={{
-          title:`MostPopular`,
-          component:MostPopular,
-        }}/>
+          name: 'Popular',
+          component:MostPopular
+        }}
+        renderScene={this._renderScene}
+        sceneStyle={{paddingTop: (Platform.OS === 'android' ? 66 : 64)}}
+        navigationBar={this._renderNavBar('Popular')}
+      />
     var favoriteTab=
-      <NavigatorIOS
+      <Navigator
         ref="nav"
         style={styles.container}
         initialRoute={{
-          title:`Favorite`,
-          component:FavoritePage,
-        }}/>
+          name: 'Favorite',
+          component:MostPopular
+        }}
+        renderScene={this._renderScene}
+        sceneStyle={{paddingTop: (Platform.OS === 'android' ? 66 : 64)}}
+        navigationBar={this._renderNavBar('Favorite')}
+      />
 
 
     return (
       <TabBarIOS
-        tintColor="lightgreen"
+        tintColor="yellowgreen"
         unselectedTintColor="lightslategray"
         barTintColor="ghostwhite">
         <TabBarIOS.Item
@@ -94,9 +161,28 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F5FCFF',
   },
+  navBar:{
+    alignItems: 'center',
+    backgroundColor: 'yellowgreen',
+    shadowOffset:{
+        width: 1,
+        height: 0.5,
+    },
+    shadowColor: '#55ACEE',
+    shadowOpacity: 0.8,
+  },
   text:{
     height:100,
     backgroundColor:'yellow',
+  },
+  title: {
+    flex: 1, alignItems: 'center', justifyContent: 'center'
+  },
+  button: {
+    flex: 1, width: 50, alignItems: 'center', justifyContent: 'center'
+  },
+  buttonText: {
+    fontSize: 18, color: '#FFFFFF', fontWeight: '400'
   }
 })
 

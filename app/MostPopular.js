@@ -69,7 +69,9 @@ var MostPopular=React.createClass({
       this.props.navigator.push({
         title:item.name,
         component:RepositoryDetail,
-        passProps:{item},
+        params:{
+          item:item,
+        },
       });
     }else {
       dismissKeyboard();
@@ -110,6 +112,7 @@ var MostPopular=React.createClass({
     var content=
     <ListView
       ref="listView"
+      style={styles.listView}
       renderRow={this.renderRow}
       renderSeparator={this.renderSeparator}
       dataSource={this.state.dataSource}
@@ -140,9 +143,13 @@ var MostPopular=React.createClass({
 });
 var styles = StyleSheet.create({
   container: {
-    flex:1,    
+    flex:1,
     alignItems: 'stretch',
-},
+    // backgroundColor:'red'
+  },
+  listView:{
+    marginTop:-20,
+  },
   separator: {
     height: 1,
     backgroundColor: '#eeeeee',
