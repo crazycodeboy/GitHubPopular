@@ -122,7 +122,7 @@ var MostPopularInGitHub=React.createClass({
   render:function() {
     return (
       <TabBarIOS
-        tintColor="yellowgreen"
+        tintColor="#4caf50"
         unselectedTintColor="lightslategray"
         barTintColor="ghostwhite">
         {this._tbItem('Popular', require('./res/images/ic_whatshot_black_36dp.png'), 'popularTab', this._navigator(PopularPage,'Popular'))}
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
   },
   navBar:{
     alignItems: 'center',
-    backgroundColor: 'yellowgreen',
+    backgroundColor: '#4caf50',
     shadowOffset:{
         width: 1,
         height: 0.5,

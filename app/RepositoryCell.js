@@ -27,10 +27,6 @@ var {
   View
 } = ReactNative;
 
-// var getStyleFromScore = require('./getStyleFromScore');
-// var getImageSource = require('./getImageSource');
-// var getTextFromScore = require('./getTextFromScore');
-
 var MovieCell = React.createClass({
   render: function() {
     var TouchableElement = TouchableHighlight;
@@ -48,23 +44,23 @@ var MovieCell = React.createClass({
                 {this.props.item.full_name}
               </Text>
               <Image
-                style={{width:20,height:20,}}
-                source={require('../res/images/ic_favorite_black_36dp.png')} />
+                style={{width:26,height:26,}}
+                source={require('../res/images/ic_star_border_green_24dp.png')} />
            </View>
            <Text style={styles.description}>
             {this.props.item.description}
            </Text>
-           <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-              <View style={{flexDirection:'row'}}>
+           <View style={{flexDirection:'row',justifyContent:'space-between',}}>
+              <View style={{flexDirection:'row',alignItems:'center'}}>
                 <Text>Author: </Text>
                 <Image
-                  style={{width:20,height:20,}}
+                  style={{width:26,height:26,}}
                   source={{uri: this.props.item.owner.avatar_url}}
                 />
               </View>
-              <View style={{flexDirection:'row'}}>
+              <View style={{flexDirection:'row',alignItems:'center'}}>
                 <Text>Stars:  </Text>
-                <Text style={styles.description}>
+                <Text>
                   {this.props.item.stargazers_count}
                 </Text>
               </View>
