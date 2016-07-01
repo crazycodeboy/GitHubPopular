@@ -90,72 +90,48 @@ var MostPopularInGitHub=React.createClass({
       />
     );
   },
-  render:function() {
-    var popularTab=
+  _navigator(defaultComponent,defaultName){
+    return (
       <Navigator
         ref="nav"
         style={styles.container}
         initialRoute={{
           name: 'Popular',
-          component:MostPopular
+          component:defaultComponent
         }}
         renderScene={this._renderScene}
         sceneStyle={{paddingTop: (Platform.OS === 'android' ? 66 : 64)}}
-        navigationBar={this._renderNavBar('Popular')}
+        navigationBar={this._renderNavBar(defaultName)}
       />
-    var favoriteTab=
-      <Navigator
-        ref="nav"
-        style={styles.container}
-        initialRoute={{
-          name: 'Favorite',
-          component:MostPopular
-        }}
-        renderScene={this._renderScene}
-        sceneStyle={{paddingTop: (Platform.OS === 'android' ? 66 : 64)}}
-        navigationBar={this._renderNavBar('Favorite')}
-      />
+    )
 
-
+  },
+  _tbItem(title,icon,selectedTab,navigator){
+    return(
+      <TabBarIOS.Item
+        title={title}
+        icon={icon}
+        selectedIcon={icon}
+        selected={this.state.selectedTab === selectedTab}
+        onPress={()=>this.onSelected(selectedTab)}
+        >
+        {navigator}
+      </TabBarIOS.Item>
+    )
+  },
+  render:function() {
     return (
       <TabBarIOS
         tintColor="yellowgreen"
         unselectedTintColor="lightslategray"
         barTintColor="ghostwhite">
-        <TabBarIOS.Item
-          title="Popular"
-          icon={require('./res/images/ic_whatshot_black_36dp.png')}
-          selectedIcon={require('./res/images/ic_whatshot_black_36dp.png')}
-          selected={this.state.selectedTab === 'popularTab'}
-          onPress={()=>this.onSelected('popularTab')}
-          >
-          {popularTab}
-        </TabBarIOS.Item>
-        <TabBarIOS.Item
-          title="Favorite"
-          icon={require('./res/images/ic_favorite_black_36dp.png')}
-          selectedIcon={require('./res/images/ic_favorite_black_36dp.png')}
-          selected={this.state.selectedTab === 'favoriteTab'}
-          onPress={()=>this.onSelected('favoriteTab')}
-          >
-          {favoriteTab}
-        </TabBarIOS.Item>
-        <TabBarIOS.Item
-          title="About"
-          icon={require('./res/images/ic_hdr_weak_black_36dp.png')}
-          selectedIcon={require('./res/images/ic_hdr_weak_black_36dp.png')}
-          selected={this.state.selectedTab === 'aboutTab'}
-          onPress={()=>this.onSelected('aboutTab')}
-          >
-          <AboutPage/>
-        </TabBarIOS.Item>
-        </TabBarIOS>
-
-      );
-    }
-  })
-
-
+        {this._tbItem('Popular', require('./res/images/ic_whatshot_black_36dp.png'), 'popularTab', this._navigator(MostPopular,'Popular'))}
+        {this._tbItem('Favorite', require('./res/images/ic_favorite_black_36dp.png'), 'favoriteTab', this._navigator(MostPopular,'Favorite'))}
+        {this._tbItem('About', require('./res/images/ic_hdr_weak_black_36dp.png'), 'aboutTab', this._navigator(AboutPage,'About'))}
+      </TabBarIOS>
+    );
+  }
+})
 const styles = StyleSheet.create({
   container: {
     flex: 1,
