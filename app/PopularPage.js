@@ -1,6 +1,5 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * PopularPage
  * @flow
  */
 'use strict';
@@ -20,10 +19,10 @@ var {
 var RepositoryCell=require('./RepositoryCell');
 var dismissKeyboard=require('dismissKeyboard');
 var RepositoryDetail=require('./RepositoryDetail')
-// var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
-var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars';
+var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
+// var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars';
 var resultData=[];
-var MostPopular=React.createClass({
+var PopularPage=React.createClass({
   getInitialState: function(){
     return{
       isLoading:false,
@@ -160,4 +159,4 @@ var styles = StyleSheet.create({
     marginLeft: 4,
   },
 });
-module.exports=MostPopular;
+module.exports=PopularPage;

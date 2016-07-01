@@ -20,7 +20,7 @@ import {
 // import Drawer from 'react-native-drawer'
 var DrawerLayout = require('react-native-drawer-layout')
 var AboutPage=require('./app/AboutPage')
-var MostPopular=require('./app/MostPopular')
+var PopularPage=require('./app/PopularPage')
 var FavoritePage=require('./app/FavoritePage')
 var MostPopularInGitHub=React.createClass({
  getInitialState: function() {
@@ -125,8 +125,8 @@ var MostPopularInGitHub=React.createClass({
         tintColor="yellowgreen"
         unselectedTintColor="lightslategray"
         barTintColor="ghostwhite">
-        {this._tbItem('Popular', require('./res/images/ic_whatshot_black_36dp.png'), 'popularTab', this._navigator(MostPopular,'Popular'))}
-        {this._tbItem('Favorite', require('./res/images/ic_favorite_black_36dp.png'), 'favoriteTab', this._navigator(MostPopular,'Favorite'))}
+        {this._tbItem('Popular', require('./res/images/ic_whatshot_black_36dp.png'), 'popularTab', this._navigator(PopularPage,'Popular'))}
+        {this._tbItem('Favorite', require('./res/images/ic_favorite_black_36dp.png'), 'favoriteTab', this._navigator(FavoritePage,'Favorite'))}
         {this._tbItem('About', require('./res/images/ic_hdr_weak_black_36dp.png'), 'aboutTab', this._navigator(AboutPage,'About'))}
       </TabBarIOS>
     );
