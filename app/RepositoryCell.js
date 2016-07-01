@@ -38,33 +38,46 @@ var MovieCell = React.createClass({
       TouchableElement = TouchableNativeFeedback;
     }
     return (
-      <View>
-        <TouchableElement
-          onPress={this.props.onSelect}
-          onShowUnderlay={this.props.onHighlight}
-          onHideUnderlay={this.props.onUnhighlight}
-          >
+      <TouchableElement
+        onPress={this.props.onSelect}
+        onShowUnderlay={this.props.onHighlight}
+        onHideUnderlay={this.props.onUnhighlight}>
           <View style={styles.row}>
+            <View style={{flexDirection:'row',justifyContent:'space-between'}}>
               <Text style={styles.title}>
-                {this.props.item.name}
+                {this.props.item.full_name}
               </Text>
-              <Text style={styles.description}>
-                {this.props.item.stargazers_count}
-              </Text>
-              <Text style={styles.description}>
-                {this.props.item.description}
-              </Text>
-          </View>
-        </TouchableElement>
-      </View>
-
+              <Image
+                style={{width:20,height:20,}}
+                source={require('../res/images/ic_favorite_black_36dp.png')} />
+           </View>
+           <Text style={styles.description}>
+            {this.props.item.description}
+           </Text>
+           <View style={{flexDirection:'row',justifyContent:'space-between'}}>
+              <View style={{flexDirection:'row'}}>
+                <Text>Author: </Text>
+                <Image
+                  style={{width:20,height:20,}}
+                  source={{uri: this.props.item.owner.avatar_url}}
+                />
+              </View>
+              <View style={{flexDirection:'row'}}>
+                <Text>Stars:  </Text>
+                <Text style={styles.description}>
+                  {this.props.item.stargazers_count}
+                </Text>
+              </View>
+           </View>
+        </View>
+      </TouchableElement>
     );
   }
 });
 
 var styles = StyleSheet.create({
   title: {
-    fontSize: 18,
+    fontSize: 12,
     marginBottom: 2,
 
   },
@@ -74,7 +87,7 @@ var styles = StyleSheet.create({
 
   },
   row: {
-    backgroundColor: '#f0f8ff',
+    backgroundColor: '#ffffff',
     padding: 5,
   },
 });

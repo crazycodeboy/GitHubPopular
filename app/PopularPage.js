@@ -66,7 +66,7 @@ var PopularPage=React.createClass({
   onSelectRepository:function(item:Object) {
     if (Platform.OS==='ios') {
       this.props.navigator.push({
-        title:item.name,
+        title:item.full_name,
         component:RepositoryDetail,
         params:{
           item:item,
@@ -75,7 +75,7 @@ var PopularPage=React.createClass({
     }else {
       dismissKeyboard();
       this.props.navigator.push({
-        title:item.name,
+        title:item.full_name,
         name:'item',
         item:item,
       });
@@ -117,6 +117,7 @@ var PopularPage=React.createClass({
       dataSource={this.state.dataSource}
       refreshControl={
          <RefreshControl
+          //contentInset={50}
            refreshing={this.state.isLoading}
            onRefresh={()=>this.onRefresh()}
            tintColor="#ff0000"
@@ -144,6 +145,7 @@ var styles = StyleSheet.create({
   container: {
     flex:1,
     alignItems: 'stretch',
+    backgroundColor: '#f0f8ff',
     // backgroundColor:'red'
   },
   listView:{
@@ -154,9 +156,9 @@ var styles = StyleSheet.create({
     backgroundColor: '#eeeeee',
   },
   rowSeparator: {
-    backgroundColor: 'rgba(0, 0, 0, 0.1)',
-    height: 1,
-    marginLeft: 4,
+    // backgroundColor:'red',
+    height: 5,
+    // marginLeft: 4,
   },
 });
 module.exports=PopularPage;
