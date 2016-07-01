@@ -113,7 +113,7 @@ var FavoritePage=React.createClass({
       ref="listView"
       style={styles.listView}
       renderRow={this.renderRow}
-      renderSeparator={this.renderSeparator}
+      //renderSeparator={this.renderSeparator}
       dataSource={this.state.dataSource}
       refreshControl={
          <RefreshControl

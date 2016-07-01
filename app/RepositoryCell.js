@@ -37,33 +37,35 @@ var MovieCell = React.createClass({
       <TouchableElement
         onPress={this.props.onSelect}
         onShowUnderlay={this.props.onHighlight}
+        underlayColor='lightgreen'
         onHideUnderlay={this.props.onUnhighlight}>
           <View style={styles.row}>
             <View style={{flexDirection:'row',justifyContent:'space-between'}}>
               <Text style={styles.title}>
                 {this.props.item.full_name}
               </Text>
-              <Image
-                style={{width:26,height:26,}}
-                source={require('../res/images/ic_star_border_green_24dp.png')} />
+
            </View>
            <Text style={styles.description}>
             {this.props.item.description}
            </Text>
            <View style={{flexDirection:'row',justifyContent:'space-between',}}>
               <View style={{flexDirection:'row',alignItems:'center'}}>
-                <Text>Author: </Text>
+                <Text style={styles.author}>Author: </Text>
                 <Image
-                  style={{width:26,height:26,}}
+                  style={{width:22,height:22,}}
                   source={{uri: this.props.item.owner.avatar_url}}
                 />
               </View>
               <View style={{flexDirection:'row',alignItems:'center'}}>
-                <Text>Stars:  </Text>
-                <Text>
+                <Text style={styles.author}>Stars:  </Text>
+                <Text style={styles.author}>
                   {this.props.item.stargazers_count}
                 </Text>
               </View>
+              <Image
+                style={{width:26,height:26,}}
+                source={require('../res/images/ic_star_border_green_24dp.png')} />
            </View>
         </View>
       </TouchableElement>
@@ -73,18 +75,31 @@ var MovieCell = React.createClass({
 
 var styles = StyleSheet.create({
   title: {
-    fontSize: 12,
+    fontSize: 14,
     marginBottom: 2,
-
+    color:'#212121'
   },
   description: {
     fontSize: 12,
     marginBottom: 2,
-
+    color:'#757575'
+  },
+  author:{
+    fontSize: 14,
+    marginBottom: 2,
+    color:'#757575'
   },
   row: {
-    backgroundColor: '#ffffff',
-    padding: 5,
+    flex: 1,
+    backgroundColor: 'white',
+    padding: 10,
+    marginLeft: 10,
+    marginRight: 10,
+    marginVertical: 5,
+    borderColor: '#dddddd',
+    borderStyle: null,
+    borderWidth: 0.5,
+    borderRadius: 2,
   },
 });
 

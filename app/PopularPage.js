@@ -85,12 +85,15 @@ var PopularPage=React.createClass({
     item:Object,
     sectionID:number|string,
     rowID:number|string,
+    highlightRowFunc: (sectionID: ?number | string, rowID: ?number | string) => void,
   ){
     return(
       <RepositoryCell
         key={item.id}
         onSelect={()=>this.onSelectRepository(item)}
-        item={item}/>
+        item={item}
+        onHighlight={() => highlightRowFunc(sectionID, rowID)}
+        onUnhighlight={() => highlightRowFunc(null, null)}/>
     );
   },
   renderSeparator: function(
@@ -113,7 +116,7 @@ var PopularPage=React.createClass({
       ref="listView"
       style={styles.listView}
       renderRow={this.renderRow}
-      renderSeparator={this.renderSeparator}
+      //renderSeparator={this.renderSeparator}
       dataSource={this.state.dataSource}
       refreshControl={
          <RefreshControl
@@ -157,7 +160,7 @@ var styles = StyleSheet.create({
   },
   rowSeparator: {
     // backgroundColor:'red',
-    height: 5,
+    // height: 5,
     // marginLeft: 4,
   },
 });

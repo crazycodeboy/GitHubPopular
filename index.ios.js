@@ -18,7 +18,7 @@ import {
   View
 } from 'react-native';
 // import Drawer from 'react-native-drawer'
-var DrawerLayout = require('react-native-drawer-layout')
+// var DrawerLayout = require('react-native-drawer-layout')
 var AboutPage=require('./app/AboutPage')
 var PopularPage=require('./app/PopularPage')
 var FavoritePage=require('./app/FavoritePage')
