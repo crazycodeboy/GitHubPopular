@@ -16,12 +16,15 @@ var {
   Text,
   View,
 } = ReactNative;
-var RepositoryCell=require('./RepositoryCell');
-var dismissKeyboard=require('dismissKeyboard');
+var RepositoryCell=require('./RepositoryCell')
+var dismissKeyboard=require('dismissKeyboard')
 var RepositoryDetail=require('./RepositoryDetail')
-var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
+var API_URL ='https://api.github.com/search/repositories?q='
+var QUERY_STR='&sort=stars'
+// var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
 // var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars';
 var resultData=[];
+var parentComponent;
 var PopularPage=React.createClass({
   getInitialState: function(){
     return{
@@ -36,12 +39,15 @@ var PopularPage=React.createClass({
   componentDidMount:function(){
     this.loadData();
   },
+  genFetchUrl(category:string){
+    return API_URL+(category==='ALL'? 'stars:>1':category)+QUERY_STR;
+  },
   loadData:function(){
     this.setState({
       isLoading:true,
       isLodingFail:false,
     });
-    fetch(API_URL).then((response)=>response.json())
+    fetch(this.genFetchUrl(this.props.tabLabel)).then((response)=>response.json())
     .catch((error)=>{
       this.setState({
         isLoading:false,
@@ -152,7 +158,7 @@ var styles = StyleSheet.create({
     // backgroundColor:'red'
   },
   listView:{
-    marginTop:-20,
+    // marginTop:-20,
   },
   separator: {
     height: 1,

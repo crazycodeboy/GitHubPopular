@@ -19,6 +19,7 @@ import {
 } from 'react-native';
 // import Drawer from 'react-native-drawer'
 // var DrawerLayout = require('react-native-drawer-layout')
+import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
 var AboutPage=require('./app/AboutPage')
 var PopularPage=require('./app/PopularPage')
 var FavoritePage=require('./app/FavoritePage')
@@ -27,6 +28,9 @@ var MostPopularInGitHub=React.createClass({
    return {
      selectedTab: 'favoriteTab',
    };
+ },
+ componentDidMount:function(){
+   this.refs.scrollableTabView;
  },
   onSelected:function(object:string) {
     this.setState({
@@ -104,7 +108,27 @@ var MostPopularInGitHub=React.createClass({
         navigationBar={this._renderNavBar(defaultName)}
       />
     )
-
+  },
+  _popularNavigator(){
+    var component=<ScrollableTabView
+      //style={{paddingTop: 20, }}
+      ref="scrollableTabView"
+      initialPage={0}
+      renderTabBar={() => <ScrollableTabBar />}
+      >
+      <PopularPage tabLabel='ALL' ref="scrollableTabView"/>
+      <PopularPage tabLabel='iOS'/>
+      <PopularPage tabLabel='Android'/>
+      <PopularPage tabLabel='JavaScript'/>
+      <PopularPage tabLabel='Java'/>
+      <PopularPage tabLabel='Go'/>
+      <PopularPage tabLabel='CSS'/>
+      <PopularPage tabLabel='Object-c'/>
+      <PopularPage tabLabel='Python'/>
+      <PopularPage tabLabel='Swift'/>
+      <PopularPage tabLabel='HTML'/>
+    </ScrollableTabView>;
+    return this._navigator(()=>component, 'Popular');
   },
   _tbItem(title,icon,selectedTab,navigator){
     return(
@@ -125,7 +149,7 @@ var MostPopularInGitHub=React.createClass({
         tintColor="#4caf50"
         unselectedTintColor="lightslategray"
         barTintColor="ghostwhite">
-        {this._tbItem('Popular', require('./res/images/ic_whatshot_black_36dp.png'), 'popularTab', this._navigator(PopularPage,'Popular'))}
+        {this._tbItem('Popular', require('./res/images/ic_whatshot_black_36dp.png'), 'popularTab', this._popularNavigator())}
         {this._tbItem('Favorite', require('./res/images/ic_favorite_black_36dp.png'), 'favoriteTab', this._navigator(FavoritePage,'Favorite'))}
         {this._tbItem('About', require('./res/images/ic_hdr_weak_black_36dp.png'), 'aboutTab', this._navigator(AboutPage,'About'))}
       </TabBarIOS>
