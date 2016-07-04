@@ -77,3 +77,16 @@ ReactNative	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryC
 render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^  render: function() {$/;"	function	line:31
 MovieCell	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^var MovieCell = React.createClass({$/;"	variable	line:30
 styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^var styles = StyleSheet.create({$/;"	variable	line:74
+RepositoryCell	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^var RepositoryCell=require('.\/RepositoryCell')$/;"	variable	line:17
+resultData	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^var resultData=[];$/;"	variable	line:22
+getInitialState	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  getInitialState: function(){$/;"	function	line:24
+componentDidMount	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  componentDidMount:function(){$/;"	function	line:34
+loadData	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  loadData:function(){$/;"	function	line:37
+onRefresh	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onRefresh :function() {$/;"	function	line:58
+getDataSource	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  getDataSource:function(items:Array<any>):ListView.DataSource{$/;"	function	line:61
+onSelectRepository	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onSelectRepository:function(item:Object) {$/;"	function	line:64
+renderRow	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  renderRow:function($/;"	function	line:82
+renderSeparator	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  renderSeparator: function($/;"	function	line:94
+render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  render() {$/;"	function	line:108
+FavoritePage	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^var FavoritePage=React.createClass({$/;"	variable	line:23
+styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^var styles = StyleSheet.create({$/;"	variable	line:135

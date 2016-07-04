@@ -3,10 +3,8 @@
  * @flow
  */
 'use strict';
-var React = require('react');
-var ReactNative = require('react-native');
-// var DrawerLayout = require('react-native-drawer-layout')
-// var SettingPage=require('./SettingPage')
+var React = require('react')
+var ReactNative = require('react-native')
 var {
   ActivityIndicator,
   ListView,
@@ -16,8 +14,8 @@ var {
   Text,
   View,
 } = ReactNative;
-var RepositoryCell=require('./RepositoryCell');
-var dismissKeyboard=require('dismissKeyboard');
+var RepositoryCell=require('./RepositoryCell')
+var dismissKeyboard=require('dismissKeyboard')
 var RepositoryDetail=require('./RepositoryDetail')
 // var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
 var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars';
@@ -117,6 +115,7 @@ var FavoritePage=React.createClass({
       dataSource={this.state.dataSource}
       refreshControl={
          <RefreshControl
+          //style={{paddingTop:64}}
            refreshing={this.state.isLoading}
            onRefresh={()=>this.onRefresh()}
            tintColor="#ff0000"
@@ -127,16 +126,9 @@ var FavoritePage=React.createClass({
          />}
       />;
     return (
-      // <DrawerLayout
-      //   ref="drawer"
-      //   drawerWidth={260}
-      //   drawerPosition={DrawerLayout.positions.Left}
-      //   renderNavigationView={() => <SettingPage />}
-      //   >
         <View style={styles.container} >
           {content}
         </View>
-      // </DrawerLayout>
     );
   }
 });

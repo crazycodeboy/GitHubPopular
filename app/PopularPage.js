@@ -3,10 +3,8 @@
  * @flow
  */
 'use strict';
-var React = require('react');
-var ReactNative = require('react-native');
-// var DrawerLayout = require('react-native-drawer-layout')
-// var SettingPage=require('./SettingPage')
+var React = require('react')
+var ReactNative = require('react-native')
 var {
   ActivityIndicator,
   ListView,
@@ -24,7 +22,7 @@ var QUERY_STR='&sort=stars'
 // var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
 // var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars';
 var resultData=[];
-var parentComponent;
+var navigatorFrom;
 var PopularPage=React.createClass({
   getInitialState: function(){
     return{
@@ -70,8 +68,9 @@ var PopularPage=React.createClass({
     return this.state.dataSource.cloneWithRows(items);
   },
   onSelectRepository:function(item:Object) {
+    var belongNavigator=this.props.homeComponent.refs.navPopular;
     if (Platform.OS==='ios') {
-      this.props.navigator.push({
+      belongNavigator.push({
         title:item.full_name,
         component:RepositoryDetail,
         params:{
@@ -80,7 +79,7 @@ var PopularPage=React.createClass({
       });
     }else {
       dismissKeyboard();
-      this.props.navigator.push({
+      belongNavigator.push({
         title:item.full_name,
         name:'item',
         item:item,

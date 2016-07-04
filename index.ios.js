@@ -1,6 +1,5 @@
 /**
  * MostPopular
- * https://github.com/facebook/react-native
  * @flow
  */
 
@@ -16,17 +15,15 @@ import {
   Text,
   TabBarIOS,
   View
-} from 'react-native';
-// import Drawer from 'react-native-drawer'
-// var DrawerLayout = require('react-native-drawer-layout')
-import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
+} from 'react-native'
+import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view'
 var AboutPage=require('./app/AboutPage')
 var PopularPage=require('./app/PopularPage')
 var FavoritePage=require('./app/FavoritePage')
 var MostPopularInGitHub=React.createClass({
  getInitialState: function() {
    return {
-     selectedTab: 'favoriteTab',
+     selectedTab: 'popularTab',
    };
  },
  componentDidMount:function(){
@@ -97,7 +94,7 @@ var MostPopularInGitHub=React.createClass({
   _navigator(defaultComponent,defaultName){
     return (
       <Navigator
-        ref="nav"
+        ref={'nav'+defaultName}
         style={styles.container}
         initialRoute={{
           name: 'Popular',
@@ -111,22 +108,22 @@ var MostPopularInGitHub=React.createClass({
   },
   _popularNavigator(){
     var component=<ScrollableTabView
-      //style={{paddingTop: 20, }}
+      style={{paddingBottom:50}}
       ref="scrollableTabView"
       initialPage={0}
       renderTabBar={() => <ScrollableTabBar />}
       >
-      <PopularPage tabLabel='ALL' ref="scrollableTabView"/>
-      <PopularPage tabLabel='iOS'/>
-      <PopularPage tabLabel='Android'/>
-      <PopularPage tabLabel='JavaScript'/>
-      <PopularPage tabLabel='Java'/>
-      <PopularPage tabLabel='Go'/>
-      <PopularPage tabLabel='CSS'/>
-      <PopularPage tabLabel='Object-c'/>
-      <PopularPage tabLabel='Python'/>
-      <PopularPage tabLabel='Swift'/>
-      <PopularPage tabLabel='HTML'/>
+      <PopularPage tabLabel='ALL' homeComponent={this}/>
+      <PopularPage tabLabel='iOS' homeComponent={this}/>
+      <PopularPage tabLabel='Android' homeComponent={this}/>
+      <PopularPage tabLabel='JavaScript' homeComponent={this}/>
+      <PopularPage tabLabel='Java' homeComponent={this}/>
+      <PopularPage tabLabel='Go' homeComponent={this}/>
+      <PopularPage tabLabel='CSS' homeComponent={this}/>
+      <PopularPage tabLabel='Object-c' homeComponent={this}/>
+      <PopularPage tabLabel='Python' homeComponent={this}/>
+      <PopularPage tabLabel='Swift' homeComponent={this}/>
+      <PopularPage tabLabel='HTML' homeComponent={this}/>
     </ScrollableTabView>;
     return this._navigator(()=>component, 'Popular');
   },
@@ -170,10 +167,6 @@ const styles = StyleSheet.create({
     },
     shadowColor: '#55ACEE',
     shadowOpacity: 0.8,
-  },
-  text:{
-    height:100,
-    backgroundColor:'yellow',
   },
   title: {
     flex: 1, alignItems: 'center', justifyContent: 'center'
