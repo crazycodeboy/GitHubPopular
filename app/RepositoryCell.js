@@ -17,8 +17,10 @@ var {
   View,
   Alert,
 } = ReactNative;
-
-var RespositoryCell = React.createClass({  
+var RespositoryCell = React.createClass({
+  onPressFavorite(any:Object){
+      this.refs.favoriteIcon.props.source===require('../res/images/ic_star_border_green_24dp.png')?false:true
+  },
   render: function() {
     var TouchableElement = TouchableHighlight;
     if (Platform.OS === 'android') {
@@ -26,6 +28,7 @@ var RespositoryCell = React.createClass({
     }
     return (
       <TouchableElement
+        ref='test'
         onPress={this.props.onSelect}
         onShowUnderlay={this.props.onHighlight}
         underlayColor='lightgreen'
@@ -54,8 +57,9 @@ var RespositoryCell = React.createClass({
                   {this.props.item.stargazers_count}
                 </Text>
               </View>
-              <TouchableHighlight onPress={this.props.onFavorite}>
+              <TouchableHighlight onPress={()=>this.props.onFavorite(this.props.item,true)}>
                 <Image
+                  ref='favoriteIcon'
                   style={{width:26,height:26,}}
                   source={require('../res/images/ic_star_border_green_24dp.png')}/>
               </TouchableHighlight>

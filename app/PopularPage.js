@@ -98,8 +98,8 @@ var PopularPage=React.createClass({
                 ]
               )
   },
-  onFavorite(item:Object){
-    this.onShowMessage(item.name);
+  onFavorite(item:Object,isFavorite:boolean){
+    this.onShowMessage(item.full_name+':'+isFavorite);
   },
   renderRow:function(
     item:Object,
@@ -112,7 +112,7 @@ var PopularPage=React.createClass({
         key={item.id}
         onSelect={()=>this.onSelectRepository(item)}
         item={item}
-        onFavorite={()=>this.onFavorite(item)}
+        onFavorite={this.onFavorite}
         onHighlight={() => highlightRowFunc(sectionID, rowID)}
         onUnhighlight={() => highlightRowFunc(null, null)}/>
     );
@@ -163,7 +163,10 @@ var PopularPage=React.createClass({
         </View>
       // </DrawerLayout>
     );
-  }
+  },
+
+
+
 });
 var styles = StyleSheet.create({
   container: {
