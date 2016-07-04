@@ -12,6 +12,7 @@ var {
   StyleSheet,
   RefreshControl,
   Text,
+  Alert,
   View,
 } = ReactNative;
 var RepositoryCell=require('./RepositoryCell')
@@ -68,6 +69,7 @@ var PopularPage=React.createClass({
     return this.state.dataSource.cloneWithRows(items);
   },
   onSelectRepository:function(item:Object) {
+    this.onShowMessage(item.full_name);
     var belongNavigator=this.props.homeComponent.refs.navPopular;
     if (Platform.OS==='ios') {
       belongNavigator.push({
@@ -86,6 +88,19 @@ var PopularPage=React.createClass({
       });
     }
   },
+  onShowMessage(alertMessage:string){
+    Alert.alert(
+                'Alert Title',
+                alertMessage,
+                [
+                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
+                  {text: 'OK', onPress: () => console.log('OK Pressed!')},
+                ]
+              )
+  },
+  onFavorite(item:Object){
+    this.onShowMessage(item.name);
+  },
   renderRow:function(
     item:Object,
     sectionID:number|string,
@@ -97,6 +112,7 @@ var PopularPage=React.createClass({
         key={item.id}
         onSelect={()=>this.onSelectRepository(item)}
         item={item}
+        onFavorite={()=>this.onFavorite(item)}
         onHighlight={() => highlightRowFunc(sectionID, rowID)}
         onUnhighlight={() => highlightRowFunc(null, null)}/>
     );

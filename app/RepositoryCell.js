@@ -14,10 +14,11 @@ var {
   Text,
   TouchableHighlight,
   TouchableNativeFeedback,
-  View
+  View,
+  Alert,
 } = ReactNative;
 
-var RespositoryCell = React.createClass({
+var RespositoryCell = React.createClass({  
   render: function() {
     var TouchableElement = TouchableHighlight;
     if (Platform.OS === 'android') {
@@ -53,9 +54,11 @@ var RespositoryCell = React.createClass({
                   {this.props.item.stargazers_count}
                 </Text>
               </View>
-              <Image
-                style={{width:26,height:26,}}
-                source={require('../res/images/ic_star_border_green_24dp.png')} />
+              <TouchableHighlight onPress={this.props.onFavorite}>
+                <Image
+                  style={{width:26,height:26,}}
+                  source={require('../res/images/ic_star_border_green_24dp.png')}/>
+              </TouchableHighlight>
            </View>
         </View>
       </TouchableElement>
