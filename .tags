@@ -91,3 +91,8 @@ onPressFavorite	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/Reposit
 render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^  render: function() {$/;"	function	line:34
 RespositoryCell	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^var RespositoryCell = React.createClass({$/;"	variable	line:20
 styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^var styles = StyleSheet.create({$/;"	variable	line:84
+React	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoriteDao.js	/^var React = require('react-native');$/;"	variable	line:7
+FavoriteDao	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoriteDao.js	/^FavoriteDao(){\/\/Singleton pattern$/;"	function	line:13
+_safeStorage	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoriteDao.js	/^FavoriteDao.prototype._safeStorage=function(key:string){$/;"	function	line:19
+FavoriteDao	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoriteDao.js	/^}$/;"	class	line:18
+FavoriteDao._safeStorage	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoriteDao.js	/^FavoriteDao.prototype._safeStorage=function(key:string){$/;"	method	line:19
