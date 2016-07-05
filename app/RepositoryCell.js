@@ -18,8 +18,18 @@ var {
   Alert,
 } = ReactNative;
 var RespositoryCell = React.createClass({
-  onPressFavorite(any:Object){
-      this.refs.favoriteIcon.props.source===require('../res/images/ic_star_border_green_24dp.png')?false:true
+  getInitialState(){
+    return{
+      isFavorite:false,
+      favoriteIcon:require('../res/images/ic_star_border_gray_24dp.png')
+    };
+  },
+  onPressFavorite(){
+    this.setState({
+      isFavorite:!this.state.isFavorite,
+      favoriteIcon:this.state.isFavorite? require('../res/images/ic_star_border_gray_24dp.png'):require('../res/images/ic_star_border_green_24dp.png')
+    });
+    this.props.onFavorite(this.props.item,!this.state.isFavorite);
   },
   render: function() {
     var TouchableElement = TouchableHighlight;
@@ -57,11 +67,12 @@ var RespositoryCell = React.createClass({
                   {this.props.item.stargazers_count}
                 </Text>
               </View>
-              <TouchableHighlight onPress={()=>this.props.onFavorite(this.props.item,true)}>
+              {/*<TouchableHighlight onPress={()=>this.props.onFavorite(this.props.item,true)}>*/}
+              <TouchableHighlight onPress={this.onPressFavorite} underlayColor='transparent'>
                 <Image
                   ref='favoriteIcon'
                   style={{width:26,height:26,}}
-                  source={require('../res/images/ic_star_border_green_24dp.png')}/>
+                  source={this.state.favoriteIcon}/>
               </TouchableHighlight>
            </View>
         </View>

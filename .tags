@@ -86,7 +86,8 @@ PopularPage	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage
 styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^var styles = StyleSheet.create({$/;"	variable	line:171
 React	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^var React = require('react');$/;"	variable	line:8
 ReactNative	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^var ReactNative = require('react-native');$/;"	variable	line:9
-onPressFavorite	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^  onPressFavorite(any:Object){$/;"	function	line:21
-render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^  render: function() {$/;"	function	line:24
+getInitialState	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^  getInitialState(){$/;"	function	line:21
+onPressFavorite	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^  onPressFavorite(){$/;"	function	line:27
+render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^  render: function() {$/;"	function	line:34
 RespositoryCell	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^var RespositoryCell = React.createClass({$/;"	variable	line:20
-styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^var styles = StyleSheet.create({$/;"	variable	line:73
+styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^var styles = StyleSheet.create({$/;"	variable	line:84
