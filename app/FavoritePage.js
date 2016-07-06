@@ -36,6 +36,11 @@ var FavoritePage=React.createClass({
   componentDidMount:function(){
     this.loadData();
   },
+  componentWillReceiveProps:function(nextProps:Object) {//当从当前页面切换走，再切换回来后
+    console.log('');
+
+    this.loadData();
+  },
   loadData:function(){
     this.setState({
       isLoading:true,

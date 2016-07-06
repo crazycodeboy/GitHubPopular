@@ -8,12 +8,13 @@ RepositoryCell	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/Favorite
 removeItems	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^var removeItems=[];$/;"	variable	line:23
 getInitialState	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  getInitialState: function(){$/;"	function	line:26
 componentDidMount	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  componentDidMount:function(){$/;"	function	line:36
-loadData	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  loadData:function(){$/;"	function	line:39
-onRefresh	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onRefresh :function() {$/;"	function	line:57
-getDataSource	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  getDataSource:function(items:Array<any>):ListView.DataSource{$/;"	function	line:60
-onSelectRepository	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onSelectRepository:function(item:Object) {$/;"	function	line:63
-onFavorite	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onFavorite(item:Object,isFavorite:boolean){$/;"	function	line:81
-renderRow	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  renderRow:function($/;"	function	line:95
-renderSeparator	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  renderSeparator: function($/;"	function	line:109
-render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  render() {$/;"	function	line:123
-styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^var styles = StyleSheet.create({$/;"	variable	line:150
+componentWillReceiveProps	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  componentWillReceiveProps:function(nextProps:Object) {\/\/当从当前页面切换走，再切换回来后$/;"	function	line:39
+loadData	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  loadData:function(){$/;"	function	line:44
+onRefresh	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onRefresh :function() {$/;"	function	line:62
+getDataSource	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  getDataSource:function(items:Array<any>):ListView.DataSource{$/;"	function	line:65
+onSelectRepository	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onSelectRepository:function(item:Object) {$/;"	function	line:68
+onFavorite	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onFavorite(item:Object,isFavorite:boolean){$/;"	function	line:86
+renderRow	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  renderRow:function($/;"	function	line:100
+renderSeparator	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  renderSeparator: function($/;"	function	line:114
+render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  render() {$/;"	function	line:128
+styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^var styles = StyleSheet.create({$/;"	variable	line:155
