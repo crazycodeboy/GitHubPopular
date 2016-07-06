@@ -20,7 +20,7 @@ var RepositoryDetail=require('./RepositoryDetail')
 var FavoriteDao=require('./FavoriteDao')
 // var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
 var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars';
-var resultData=[];
+var removeItems=[];
 var favoriteDao = new FavoriteDao()
 var FavoritePage=React.createClass({
   getInitialState: function(){
@@ -78,6 +78,20 @@ var FavoritePage=React.createClass({
       });
     }
   },
+  onFavorite(item:Object,isFavorite:boolean){
+    if(isFavorite){
+      for(var i=0;i<removeItems.length;i++){
+        if(item===removeItems[i]){
+          removeItems.splice(i, 1);
+          break;
+        }
+      }
+    }else {
+      removeItems.push(item);
+    }
+    console.log(removeItems);
+  },
+
   renderRow:function(
     item:Object,
     sectionID:number|string,
@@ -86,6 +100,8 @@ var FavoritePage=React.createClass({
     return(
       <RepositoryCell
         key={item.id}
+        onFavorite={this.onFavorite}
+        isFavorite={true}
         onSelect={()=>this.onSelectRepository(item)}
         item={item}/>
     );

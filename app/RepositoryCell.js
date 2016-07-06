@@ -20,8 +20,8 @@ var {
 var RespositoryCell = React.createClass({
   getInitialState(){
     return{
-      isFavorite:false,
-      favoriteIcon:require('../res/images/ic_star_border_gray_24dp.png')
+      isFavorite:this.props.isFavorite,
+      favoriteIcon:this.props.isFavorite? require('../res/images/ic_star_border_green_24dp.png'):require('../res/images/ic_star_border_gray_24dp.png')
     };
   },
   onPressFavorite(){

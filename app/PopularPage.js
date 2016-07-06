@@ -122,6 +122,7 @@ var PopularPage=React.createClass({
         key={item.id}
         onSelect={()=>this.onSelectRepository(item)}
         item={item}
+        isFavorite={false}
         onFavorite={this.onFavorite}
         onHighlight={() => highlightRowFunc(sectionID, rowID)}
         onUnhighlight={() => highlightRowFunc(null, null)}/>
