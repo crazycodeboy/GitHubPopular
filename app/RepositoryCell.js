@@ -24,12 +24,18 @@ var RespositoryCell = React.createClass({
       favoriteIcon:this.props.isFavorite? require('../res/images/ic_star_border_green_24dp.png'):require('../res/images/ic_star_border_gray_24dp.png')
     };
   },
-  onPressFavorite(){
+  componentWillReceiveProps:function(nextProps:Object) {//当从当前页面切换走，再切换回来后
+    this.setFavoriteState(nextProps.isFavorite)
+  },
+  setFavoriteState(isFavorite:boolean){
     this.setState({
-      isFavorite:!this.state.isFavorite,
-      favoriteIcon:this.state.isFavorite? require('../res/images/ic_star_border_gray_24dp.png'):require('../res/images/ic_star_border_green_24dp.png')
-    });
-    this.props.onFavorite(this.props.item,!this.state.isFavorite);
+      isFavorite:isFavorite,
+      favoriteIcon:isFavorite? require('../res/images/ic_star_border_green_24dp.png'):require('../res/images/ic_star_border_gray_24dp.png')
+    })
+  },
+  onPressFavorite(){
+    this.setFavoriteState(!this.state.isFavorite)
+    this.props.onFavorite(this.props.item,!this.state.isFavorite)
   },
   render: function() {
     var TouchableElement = TouchableHighlight;

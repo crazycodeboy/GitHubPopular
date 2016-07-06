@@ -23,7 +23,7 @@ var API_URL ='https://api.github.com/search/repositories?q='
 var QUERY_STR='&sort=stars'
 // var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
 // var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars';
-var resultData=[];
+var favoritItems=[];
 var navigatorFrom;
 var favoriteDao = new FavoriteDao();
 var PopularPage=React.createClass({
@@ -40,24 +40,31 @@ var PopularPage=React.createClass({
   componentDidMount:function(){
     this.loadData();
   },
+  getFavoriteItems(){
+    favoriteDao.getAllItems().then((items)=>{
+      favoritItems=items;
+    }).catch((error)=>{
+      console.log(error);
+    });
+  },
   genFetchUrl(category:string){
     return API_URL+(category==='ALL'? 'stars:>1':category)+QUERY_STR;
   },
+
   loadData:function(){
+    this.getFavoriteItems();
     this.setState({
       isLoading:true,
       isLodingFail:false,
     });
     fetch(this.genFetchUrl(this.props.tabLabel))
-    .then((response)=>
-    response.json())
+    .then((response)=>response.json())
     .catch((error)=>{
       this.setState({
         isLoading:false,
         isLodingFail:true,
       });
     }).then((responseData)=>{
-      resultData=responseData.items;
       this.setState({
         isLoading:false,
         isLodingFail:false,
@@ -94,17 +101,30 @@ var PopularPage=React.createClass({
   },
   onShowMessage(alertMessage:string){
     Alert.alert(
-                'Alert Title',
-                alertMessage,
-                [
-                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
-                  {text: 'OK', onPress: () => console.log('OK Pressed!')},
-                ]
-              )
+
+          'Alert Title',
+          alertMessage,
+          [
+            {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
+            {text: 'OK', onPress: () => console.log('OK Pressed!')},
+          ]
+        )
   },
   onFavorite(item:Object,isFavorite:boolean){
     this.onShowMessage(item.full_name+':'+isFavorite)
-    favoriteDao.saveFavoriteItem(item.id.toString(),JSON.stringify(item))
+    if(isFavorite){
+      favoriteDao.saveFavoriteItem(item.id.toString(),JSON.stringify(item));
+    }else {
+      favoriteDao.removeFavoriteItem(item.id.toString());
+    }
+  },
+  checkFavorite(item:Object){
+     for(var i=0,len=favoritItems.length;i<len;i++){
+       if(item.id===favoritItems[i].id){
+         return true;
+       }
+    }
+    return false;
   },
   renderRow:function(
     item:Object,
@@ -117,7 +137,7 @@ var PopularPage=React.createClass({
         key={item.id}
         onSelect={()=>this.onSelectRepository(item)}
         item={item}
-        isFavorite={false}
+        isFavorite={this.checkFavorite(item)}
         onFavorite={this.onFavorite}
         onHighlight={() => highlightRowFunc(sectionID, rowID)}
         onUnhighlight={() => highlightRowFunc(null, null)}/>
