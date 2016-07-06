@@ -18,12 +18,14 @@ var {
 var RepositoryCell=require('./RepositoryCell')
 var dismissKeyboard=require('dismissKeyboard')
 var RepositoryDetail=require('./RepositoryDetail')
+var FavoriteDao=require('./FavoriteDao')
 var API_URL ='https://api.github.com/search/repositories?q='
 var QUERY_STR='&sort=stars'
 // var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
 // var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars';
 var resultData=[];
 var navigatorFrom;
+var favoriteDao = new FavoriteDao();
 var PopularPage=React.createClass({
   getInitialState: function(){
     return{
@@ -46,7 +48,9 @@ var PopularPage=React.createClass({
       isLoading:true,
       isLodingFail:false,
     });
-    fetch(this.genFetchUrl(this.props.tabLabel)).then((response)=>response.json())
+    fetch(this.genFetchUrl(this.props.tabLabel))
+    .then((response)=>
+    response.json())
     .catch((error)=>{
       this.setState({
         isLoading:false,
@@ -100,6 +104,12 @@ var PopularPage=React.createClass({
   },
   onFavorite(item:Object,isFavorite:boolean){
     this.onShowMessage(item.full_name+':'+isFavorite);
+    favoriteDao.saveFavoriteItem(item.id.toString(),JSON.stringify(item));
+    favoriteDao.getAllItems().then((items)=>{
+      console.log(items);
+    }).catch((error)=>{
+      console.log(error);
+    });
   },
   renderRow:function(
     item:Object,

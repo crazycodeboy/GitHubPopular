@@ -17,9 +17,11 @@ var {
 var RepositoryCell=require('./RepositoryCell')
 var dismissKeyboard=require('dismissKeyboard')
 var RepositoryDetail=require('./RepositoryDetail')
+var FavoriteDao=require('./FavoriteDao')
 // var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
 var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars';
 var resultData=[];
+var favoriteDao = new FavoriteDao()
 var FavoritePage=React.createClass({
   getInitialState: function(){
     return{
@@ -39,21 +41,18 @@ var FavoritePage=React.createClass({
       isLoading:true,
       isLodingFail:false,
     });
-    fetch(API_URL).then((response)=>response.json())
-    .catch((error)=>{
+    favoriteDao.getAllItems().then((items)=>{
+      this.setState({
+        isLoading:false,
+        isLodingFail:false,
+        dataSource:this.getDataSource(items),
+      });
+    }).catch((error)=>{
       this.setState({
         isLoading:false,
         isLodingFail:true,
       });
-    }).then((responseData)=>{
-      resultData=responseData.items;
-      this.setState({
-        isLoading:false,
-        isLodingFail:false,
-        dataSource:this.getDataSource(responseData.items),
-      });
-    })
-    .done();
+    });
   },
   onRefresh :function() {
     this.loadData();
