@@ -19,8 +19,7 @@ var dismissKeyboard=require('dismissKeyboard')
 var RepositoryDetail=require('./RepositoryDetail')
 var FavoriteDao=require('./FavoriteDao')
 // var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
-var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars';
-var removeItems=[];
+var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars'
 var favoriteDao = new FavoriteDao()
 var FavoritePage=React.createClass({
   getInitialState: function(){
@@ -34,18 +33,17 @@ var FavoritePage=React.createClass({
     };
   },
   componentDidMount:function(){
-    this.loadData();
+    this.loadData(true);
   },
   componentWillReceiveProps:function(nextProps:Object) {//当从当前页面切换走，再切换回来后
-    console.log('');
-
-    this.loadData();
+    this.loadData(false);
   },
-  loadData:function(){
-    this.setState({
-      isLoading:true,
-      isLodingFail:false,
-    });
+  loadData:function(isShowLoading:boolean){
+    if(isShowLoading)
+      this.setState({
+        isLoading:true,
+        isLodingFail:false,
+      });
     favoriteDao.getAllItems().then((items)=>{
       this.setState({
         isLoading:false,
@@ -60,7 +58,7 @@ var FavoritePage=React.createClass({
     });
   },
   onRefresh :function() {
-    this.loadData();
+    this.loadData(true);
   },
   getDataSource:function(items:Array<any>):ListView.DataSource{
     return this.state.dataSource.cloneWithRows(items);
@@ -85,18 +83,11 @@ var FavoritePage=React.createClass({
   },
   onFavorite(item:Object,isFavorite:boolean){
     if(isFavorite){
-      for(var i=0;i<removeItems.length;i++){
-        if(item===removeItems[i]){
-          removeItems.splice(i, 1);
-          break;
-        }
-      }
+      favoriteDao.saveFavoriteItem(item.id.toString(),JSON.stringify(item));
     }else {
-      removeItems.push(item);
+      favoriteDao.removeFavoriteItem(item.id.toString());
     }
-    console.log(removeItems);
   },
-
   renderRow:function(
     item:Object,
     sectionID:number|string,
@@ -131,6 +122,7 @@ var FavoritePage=React.createClass({
       ref="listView"
       style={styles.listView}
       renderRow={this.renderRow}
+      enableEmptySections={true}
       //renderSeparator={this.renderSeparator}
       dataSource={this.state.dataSource}
       refreshControl={

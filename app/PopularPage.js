@@ -103,13 +103,8 @@ var PopularPage=React.createClass({
               )
   },
   onFavorite(item:Object,isFavorite:boolean){
-    this.onShowMessage(item.full_name+':'+isFavorite);
-    favoriteDao.saveFavoriteItem(item.id.toString(),JSON.stringify(item));
-    favoriteDao.getAllItems().then((items)=>{
-      console.log(items);
-    }).catch((error)=>{
-      console.log(error);
-    });
+    this.onShowMessage(item.full_name+':'+isFavorite)
+    favoriteDao.saveFavoriteItem(item.id.toString(),JSON.stringify(item))
   },
   renderRow:function(
     item:Object,

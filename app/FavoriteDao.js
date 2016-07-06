@@ -33,9 +33,10 @@ FavoriteDao.prototype.saveFavoriteItem=function(key:string,vaule:string,
   callback?: ?(error: ?Error, result: ?Object) => void) {
     AsyncStorage.setItem(key,vaule,callback);
 }
-FavoriteDao.prototype.removeFavoriteItem=function(key:string,vaule:string,
-  callback?: ?(error: ?Error, result: ?Object) => void) {
-    AsyncStorage.removeItem(key,callback);
+FavoriteDao.prototype.removeFavoriteItem=function(key:string) {
+    AsyncStorage.removeItem(key,(error,result)=>{
+      console.log('');
+    });
 }
 FavoriteDao.prototype.getAllItems=function() {
   return new Promise((resolve,reject)=>{
@@ -47,7 +48,7 @@ FavoriteDao.prototype.getAllItems=function() {
              // get at each store's key/value so you can work with it
              let key = store[i][0];
              let value = store[i][1];
-             items.push(JSON.parse(value));
+             if(value)items.push(JSON.parse(value));
             });
             resolve(items);
         } catch (e) {
