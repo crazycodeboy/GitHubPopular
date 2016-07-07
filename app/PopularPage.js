@@ -19,12 +19,14 @@ var RepositoryCell=require('./RepositoryCell')
 var dismissKeyboard=require('dismissKeyboard')
 var RepositoryDetail=require('./RepositoryDetail')
 var FavoriteDao=require('./FavoriteDao')
+var ProjectModel=require('./model/ProjectModel')
 var API_URL ='https://api.github.com/search/repositories?q='
 var QUERY_STR='&sort=stars'
 // var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
 // var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars';
 var navigatorFrom
-var resultData=[]
+var projectModels=[];
+// var items=[];
 var favoriteDao = new FavoriteDao()
 var PopularPage=React.createClass({
   getInitialState: function(){
@@ -32,6 +34,7 @@ var PopularPage=React.createClass({
       isLoading:false,
       isLodingFail:false,
       favoritItems:[],
+      items:[],
       dataSource:new ListView.DataSource({
         rowHasChanged:(row1,row2)=>row1!==row2,
       }),
@@ -44,18 +47,26 @@ var PopularPage=React.createClass({
   },
   updateFavorite(selectedTab:string){
     console.log(selectedTab);
-    this.getFavoriteItems();
-    // resultData.pop();
-    resultData=JSON.parse(JSON.stringify(resultData));
+    this.getFavoriteItems(true);
+  },
+  flushFavoriteState(){
+    projectModels=[];
+    var items=this.state.items;
+    for(var i=0,len=items.length;i<len;i++){
+      projectModels.push(new ProjectModel(items[i],this.checkFavorite(items[i])));
+    }
     this.setState({
-      dataSource:this.getDataSource(resultData),
+      isLoading:false,
+      isLodingFail:false,
+      dataSource:this.getDataSource(projectModels),
     });
   },
-  getFavoriteItems(){
+  getFavoriteItems(isFlush:boolean){
     favoriteDao.getAllItems().then((items)=>{
       this.setState({
         favoritItems:items
       })
+      if (isFlush) this.flushFavoriteState();
     }).catch((error)=>{
       console.log(error);
     });
@@ -65,7 +76,7 @@ var PopularPage=React.createClass({
   },
 
   loadData:function(){
-    this.getFavoriteItems();
+    this.getFavoriteItems(false);
     this.setState({
       isLoading:true,
       isLodingFail:false,
@@ -79,10 +90,9 @@ var PopularPage=React.createClass({
       });
     }).then((responseData)=>{
       this.setState({
-        isLoading:false,
-        isLodingFail:false,
-        dataSource:this.getDataSource(resultData=responseData.items),
-      });
+        items:responseData.items
+      })
+      this.flushFavoriteState();
     })
     .done();
   },
@@ -92,15 +102,15 @@ var PopularPage=React.createClass({
   getDataSource:function(items:Array<any>):ListView.DataSource{
     return this.state.dataSource.cloneWithRows(items);
   },
-  onSelectRepository:function(item:Object) {
-    this.onShowMessage(item.full_name);
+  onSelectRepository:function(projectModel:Object) {
     var belongNavigator=this.props.homeComponent.refs.navPopular;
+    var item=projectModel.item;
     if (Platform.OS==='ios') {
       belongNavigator.push({
         title:item.full_name,
         component:RepositoryDetail,
         params:{
-          item:item,
+          projectModel:projectModel,
         },
       });
     }else {
@@ -108,7 +118,7 @@ var PopularPage=React.createClass({
       belongNavigator.push({
         title:item.full_name,
         name:'item',
-        item:item,
+        projectModel:projectModel,
       });
     }
   },
@@ -140,18 +150,18 @@ var PopularPage=React.createClass({
     return false;
   },
   renderRow:function(
-    item:Object,
+    projectModel:Object,
     sectionID:number|string,
     rowID:number|string,
     highlightRowFunc: (sectionID: ?number | string, rowID: ?number | string) => void,
   ){
     return(
       <RepositoryCell
-        key={item.id}
-        onSelect={()=>this.onSelectRepository(item)}
-        item={item}
+        key={projectModel.item.id}
+        onSelect={()=>this.onSelectRepository(projectModel)}
+        projectModel={projectModel}
         favoritItems={this.state.favoritItems}
-        isFavorite={this.checkFavorite(item)}
+        //isFavorite={this.checkFavorite(item)}
         onFavorite={this.onFavorite}
         onHighlight={() => highlightRowFunc(sectionID, rowID)}
         onUnhighlight={() => highlightRowFunc(null, null)}/>

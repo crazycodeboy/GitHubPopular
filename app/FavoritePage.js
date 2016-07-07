@@ -18,6 +18,7 @@ var RepositoryCell=require('./RepositoryCell')
 var dismissKeyboard=require('dismissKeyboard')
 var RepositoryDetail=require('./RepositoryDetail')
 var FavoriteDao=require('./FavoriteDao')
+var ProjectModel=require('./model/ProjectModel')
 // var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
 var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars'
 var favoriteDao = new FavoriteDao()
@@ -45,10 +46,14 @@ var FavoritePage=React.createClass({
         isLodingFail:false,
       });
     favoriteDao.getAllItems().then((items)=>{
+      var resultData=[];
+      for(var i=0,len=items.length;i<len;i++){
+        resultData.push(new ProjectModel(items[i],true));
+      }
       this.setState({
         isLoading:false,
         isLodingFail:false,
-        dataSource:this.getDataSource(items),
+        dataSource:this.getDataSource(resultData),
       });
     }).catch((error)=>{
       this.setState({
@@ -63,21 +68,23 @@ var FavoritePage=React.createClass({
   getDataSource:function(items:Array<any>):ListView.DataSource{
     return this.state.dataSource.cloneWithRows(items);
   },
-  onSelectRepository:function(item:Object) {
+  onSelectRepository:function(projectModel:Object) {
+    var belongNavigator=this.props.homeComponent.refs.navPopular;
+    var item=projectModel.item;
     if (Platform.OS==='ios') {
-      this.props.navigator.push({
-        title:item.name,
+      belongNavigator.push({
+        title:item.full_name,
         component:RepositoryDetail,
         params:{
-          item:item,
+          projectModel:projectModel,
         },
       });
     }else {
       dismissKeyboard();
-      this.props.navigator.push({
-        title:item.name,
+      belongNavigator.push({
+        title:item.full_name,
         name:'item',
-        item:item,
+        projectModel:projectModel,
       });
     }
   },
@@ -89,17 +96,17 @@ var FavoritePage=React.createClass({
     }
   },
   renderRow:function(
-    item:Object,
+    projectModel:Object,
     sectionID:number|string,
     rowID:number|string,
   ){
     return(
       <RepositoryCell
-        key={item.id}
+        key={projectModel.item.id}
         onFavorite={this.onFavorite}
         isFavorite={true}
-        onSelect={()=>this.onSelectRepository(item)}
-        item={item}/>
+        onSelect={()=>this.onSelectRepository(projectModel.item)}
+        projectModel={projectModel}/>
     );
   },
   renderSeparator: function(

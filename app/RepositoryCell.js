@@ -20,13 +20,13 @@ var {
 var RespositoryCell = React.createClass({
   getInitialState(){
     return{
-      isFavorite:this.props.isFavorite,
-      favoriteIcon:this.props.isFavorite? require('../res/images/ic_star_border_green_24dp.png'):require('../res/images/ic_star_border_gray_24dp.png'),
-      favoritItems:this.props.favoritItems
+      isFavorite:this.props.projectModel.isFavorite,
+      favoriteIcon:this.props.projectModel.isFavorite? require('../res/images/ic_star_border_green_24dp.png'):require('../res/images/ic_star_border_gray_24dp.png'),
+      // favoritItems:this.props.favoritItems
     };
   },
   componentWillReceiveProps:function(nextProps:Object) {//当从当前页面切换走，再切换回来后
-    this.setFavoriteState(nextProps.isFavorite)
+    this.setFavoriteState(nextProps.projectModel.isFavorite)
   },
   setFavoriteState(isFavorite:boolean){
     this.setState({
@@ -36,9 +36,10 @@ var RespositoryCell = React.createClass({
   },
   onPressFavorite(){
     this.setFavoriteState(!this.state.isFavorite)
-    this.props.onFavorite(this.props.item,!this.state.isFavorite)
+    this.props.onFavorite(this.props.projectModel.item,!this.state.isFavorite)
   },
   render: function() {
+    var item=this.props.projectModel.item;
     var TouchableElement = TouchableHighlight;
     if (Platform.OS === 'android') {
       TouchableElement = TouchableNativeFeedback;
@@ -53,25 +54,25 @@ var RespositoryCell = React.createClass({
           <View style={styles.row}>
             <View style={{flexDirection:'row',justifyContent:'space-between'}}>
               <Text style={styles.title}>
-                {this.props.item.full_name}
+                {item.full_name}
               </Text>
 
            </View>
            <Text style={styles.description}>
-            {this.props.item.description}
+            {item.description}
            </Text>
            <View style={{flexDirection:'row',justifyContent:'space-between',}}>
               <View style={{flexDirection:'row',alignItems:'center'}}>
                 <Text style={styles.author}>Author: </Text>
                 <Image
                   style={{width:22,height:22,}}
-                  source={{uri: this.props.item.owner.avatar_url}}
+                  source={{uri: item.owner.avatar_url}}
                 />
               </View>
               <View style={{flexDirection:'row',alignItems:'center'}}>
                 <Text style={styles.author}>Stars:  </Text>
                 <Text style={styles.author}>
-                  {this.props.item.stargazers_count}
+                  {item.stargazers_count}
                 </Text>
               </View>
               {/*<TouchableHighlight onPress={()=>this.props.onFavorite(this.props.item,true)}>*/}
