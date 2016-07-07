@@ -42,19 +42,18 @@ var PopularPage=React.createClass({
     };
   },
   componentDidMount:function(){
-    this.props.homeComponent.updateFavorite=this.updateFavorite;
+    this.props.homeComponent.updateFavorite=this.updateFavorite;//向homeComponent注册updateFavorite回调，以便监听Tab切换事件
     this.loadData();
   },
   componentWillReceiveProps:function(nextProps:Object) {//当从当前页面切换走，再切换回来后
-    console.log('');
-    nextProps.homeComponent.updateFavorite=this.updateFavorite;
+    nextProps.homeComponent.updateFavorite=this.updateFavorite;//向homeComponent注册updateFavorite回调，以便监听Tab切换事件
     this.updateFavorite(nextProps.tabLabel);
   },
   updateFavorite(selectedTab:string){
     console.log(selectedTab);
     this.getFavoriteItems(true);
   },
-  flushFavoriteState(){
+  flushFavoriteState(){//更新ProjectItem的Favorite状态
     projectModels=[];
     var items=this.state.items;
     for(var i=0,len=items.length;i<len;i++){
@@ -66,7 +65,7 @@ var PopularPage=React.createClass({
       dataSource:this.getDataSource(projectModels),
     });
   },
-  getFavoriteItems(isFlush:boolean){
+  getFavoriteItems(isFlush:boolean){//获取本地用户收藏的ProjectItem
     favoriteDao.getAllItems().then((items)=>{
       this.setState({
         favoritItems:items
@@ -138,15 +137,14 @@ var PopularPage=React.createClass({
           ]
         )
   },
-  onFavorite(item:Object,isFavorite:boolean){
-    this.onShowMessage(item.full_name+':'+isFavorite)
+  onFavorite(item:Object,isFavorite:boolean){//favoriteIcon单击回调函数
     if(isFavorite){
       favoriteDao.saveFavoriteItem(item.id.toString(),JSON.stringify(item));
     }else {
       favoriteDao.removeFavoriteItem(item.id.toString());
     }
   },
-  checkFavorite(item:Object){
+  checkFavorite(item:Object){//检查该Item是否被收藏
      for(var i=0,len=this.state.favoritItems.length;i<len;i++){
        if(item.id===this.state.favoritItems[i].id){
          return true;
