@@ -111,9 +111,12 @@ var MostPopularInGitHub=React.createClass({
   _popularNavigator(){
     var component=<ScrollableTabView
       style={{paddingBottom:50}}
+      tabBarUnderlineColor='#4caf50'
+      tabBarInactiveTextColor='gray'
+      tabBarActiveTextColor='#4caf50'
       ref="scrollableTabView"
       initialPage={0}
-      renderTabBar={() => <ScrollableTabBar />}
+      renderTabBar={() => <ScrollableTabBar underlineHeight={2}/>}
       >
       <PopularPage tabLabel='ALL' homeComponent={this}/>
       <PopularPage tabLabel='iOS' homeComponent={this}/>

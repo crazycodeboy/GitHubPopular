@@ -190,6 +190,7 @@ var PopularPage=React.createClass({
       ref="listView"
       style={styles.listView}
       renderRow={this.renderRow}
+      enableEmptySections={true}
       //renderSeparator={this.renderSeparator}
       dataSource={this.state.dataSource}
       refreshControl={
