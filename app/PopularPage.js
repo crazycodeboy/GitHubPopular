@@ -23,14 +23,15 @@ var API_URL ='https://api.github.com/search/repositories?q='
 var QUERY_STR='&sort=stars'
 // var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
 // var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars';
-var favoritItems=[];
-var navigatorFrom;
-var favoriteDao = new FavoriteDao();
+var navigatorFrom
+var resultData=[]
+var favoriteDao = new FavoriteDao()
 var PopularPage=React.createClass({
   getInitialState: function(){
     return{
       isLoading:false,
       isLodingFail:false,
+      favoritItems:[],
       dataSource:new ListView.DataSource({
         rowHasChanged:(row1,row2)=>row1!==row2,
       }),
@@ -38,11 +39,23 @@ var PopularPage=React.createClass({
     };
   },
   componentDidMount:function(){
+    this.props.homeComponent.updateFavorite=this.updateFavorite;
     this.loadData();
+  },
+  updateFavorite(selectedTab:string){
+    console.log(selectedTab);
+    this.getFavoriteItems();
+    // resultData.pop();
+    resultData=JSON.parse(JSON.stringify(resultData));
+    this.setState({
+      dataSource:this.getDataSource(resultData),
+    });
   },
   getFavoriteItems(){
     favoriteDao.getAllItems().then((items)=>{
-      favoritItems=items;
+      this.setState({
+        favoritItems:items
+      })
     }).catch((error)=>{
       console.log(error);
     });
@@ -68,7 +81,7 @@ var PopularPage=React.createClass({
       this.setState({
         isLoading:false,
         isLodingFail:false,
-        dataSource:this.getDataSource(responseData.items),
+        dataSource:this.getDataSource(resultData=responseData.items),
       });
     })
     .done();
@@ -119,8 +132,8 @@ var PopularPage=React.createClass({
     }
   },
   checkFavorite(item:Object){
-     for(var i=0,len=favoritItems.length;i<len;i++){
-       if(item.id===favoritItems[i].id){
+     for(var i=0,len=this.state.favoritItems.length;i<len;i++){
+       if(item.id===this.state.favoritItems[i].id){
          return true;
        }
     }
@@ -137,6 +150,7 @@ var PopularPage=React.createClass({
         key={item.id}
         onSelect={()=>this.onSelectRepository(item)}
         item={item}
+        favoritItems={this.state.favoritItems}
         isFavorite={this.checkFavorite(item)}
         onFavorite={this.onFavorite}
         onHighlight={() => highlightRowFunc(sectionID, rowID)}

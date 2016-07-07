@@ -20,6 +20,7 @@ import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-ta
 var AboutPage=require('./app/AboutPage')
 var PopularPage=require('./app/PopularPage')
 var FavoritePage=require('./app/FavoritePage')
+var updateFavorite;
 var MostPopularInGitHub=React.createClass({
  getInitialState: function() {
    return {
@@ -30,6 +31,7 @@ var MostPopularInGitHub=React.createClass({
    this.refs.scrollableTabView;
  },
   onSelected:function(object:string) {
+    if(this.updateFavorite&&'popularTab'===object)this.updateFavorite(object);
     this.setState({
       selectedTab:object,
     })

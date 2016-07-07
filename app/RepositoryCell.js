@@ -21,7 +21,8 @@ var RespositoryCell = React.createClass({
   getInitialState(){
     return{
       isFavorite:this.props.isFavorite,
-      favoriteIcon:this.props.isFavorite? require('../res/images/ic_star_border_green_24dp.png'):require('../res/images/ic_star_border_gray_24dp.png')
+      favoriteIcon:this.props.isFavorite? require('../res/images/ic_star_border_green_24dp.png'):require('../res/images/ic_star_border_gray_24dp.png'),
+      favoritItems:this.props.favoritItems
     };
   },
   componentWillReceiveProps:function(nextProps:Object) {//当从当前页面切换走，再切换回来后
