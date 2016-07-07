@@ -45,6 +45,11 @@ var PopularPage=React.createClass({
     this.props.homeComponent.updateFavorite=this.updateFavorite;
     this.loadData();
   },
+  componentWillReceiveProps:function(nextProps:Object) {//当从当前页面切换走，再切换回来后
+    console.log('');
+    nextProps.homeComponent.updateFavorite=this.updateFavorite;
+    this.updateFavorite(nextProps.tabLabel);
+  },
   updateFavorite(selectedTab:string){
     console.log(selectedTab);
     this.getFavoriteItems(true);

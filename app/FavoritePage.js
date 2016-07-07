@@ -69,7 +69,7 @@ var FavoritePage=React.createClass({
     return this.state.dataSource.cloneWithRows(items);
   },
   onSelectRepository:function(projectModel:Object) {
-    var belongNavigator=this.props.homeComponent.refs.navPopular;
+    var belongNavigator=this.props.navigator;
     var item=projectModel.item;
     if (Platform.OS==='ios') {
       belongNavigator.push({
@@ -105,7 +105,7 @@ var FavoritePage=React.createClass({
         key={projectModel.item.id}
         onFavorite={this.onFavorite}
         isFavorite={true}
-        onSelect={()=>this.onSelectRepository(projectModel.item)}
+        onSelect={()=>this.onSelectRepository(projectModel)}
         projectModel={projectModel}/>
     );
   },

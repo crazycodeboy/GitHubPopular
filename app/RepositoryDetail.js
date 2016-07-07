@@ -15,13 +15,14 @@ var{
 
 var RepositoryDetail=React.createClass({
   render:function() {
+    var item=this.props.projectModel.item;
     return(
       <ScrollView style={styles.container}>
         <View >
-          <Text>{this.props.item.full_name}</Text>
-          <Text>{this.props.item.description}</Text>
-          <Text>{this.props.item.stargazers_count}</Text>
-          <Text>{this.props.item.owner.login}</Text>
+          <Text>{item.full_name}</Text>
+          <Text>{item.description}</Text>
+          <Text>{item.stargazers_count}</Text>
+          <Text>{item.owner.login}</Text>
         </View>
       </ScrollView>
     );
