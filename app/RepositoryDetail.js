@@ -20,11 +20,12 @@ var RepositoryDetail=React.createClass({
   getInitialState(){
     return{
       isFavorite:this.props.projectModel.isFavorite,
-      favoriteIcon:this.props.projectModel.isFavorite? require('../res/images/ic_star_border_white_24dp.png'):require('../res/images/ic_star_border_gray_white_24dp.png'),
-
+      favoriteIcon:this.props.projectModel.isFavorite? require('../res/images/ic_star_border_white_24dp.png'):require('../res/images/ic_star_border_gray_white_24dp.png')
     }
   },
-
+  componentWillUnmount:function(){
+    if (this.props.parentComponent)this.props.parentComponent.updateFavorite();
+  },
   setFavoriteState(isFavorite:boolean){
     this.setState({
       isFavorite:isFavorite,

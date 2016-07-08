@@ -115,6 +115,7 @@ var PopularPage=React.createClass({
         component:RepositoryDetail,
         params:{
           projectModel:projectModel,
+          parentComponent:this
         },
       });
     }else {
