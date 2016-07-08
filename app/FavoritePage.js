@@ -19,6 +19,7 @@ var dismissKeyboard=require('dismissKeyboard')
 var RepositoryDetail=require('./RepositoryDetail')
 var FavoriteDao=require('./FavoriteDao')
 var ProjectModel=require('./model/ProjectModel')
+var NavigationBar=require('./NavigationBar')
 // var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';
 var API_URL ='https://api.github.com/search/repositories?q=stars:>1&sort=stars'
 var favoriteDao = new FavoriteDao()
@@ -146,6 +147,8 @@ var FavoritePage=React.createClass({
       />;
     return (
         <View style={styles.container} >
+          <NavigationBar
+            title='Favorite'/>
           {content}
         </View>
     );

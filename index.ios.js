@@ -20,6 +20,7 @@ import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-ta
 var AboutPage=require('./app/AboutPage')
 var PopularPage=require('./app/PopularPage')
 var FavoritePage=require('./app/FavoritePage')
+var NavigationBar=require('./app/NavigationBar')
 var updateFavorite;
 var MostPopularInGitHub=React.createClass({
  getInitialState: function() {
@@ -28,7 +29,7 @@ var MostPopularInGitHub=React.createClass({
    };
  },
  componentDidMount:function(){
-   this.refs.scrollableTabView;
+   console.log('');
  },
   onSelected:function(object:string) {
     if(this.updateFavorite&&'popularTab'===object)this.updateFavorite(object);
@@ -103,33 +104,38 @@ var MostPopularInGitHub=React.createClass({
           component:defaultComponent
         }}
         renderScene={this._renderScene}
-        sceneStyle={{paddingTop: (Platform.OS === 'android' ? 66 : 64)}}
-        navigationBar={this._renderNavBar(defaultName)}
+        //sceneStyle={{paddingTop: (Platform.OS === 'android' ? 66 : 64)}}
+        //navigationBar={this._renderNavBar(defaultName)}
       />
     )
   },
   _popularNavigator(){
-    var component=<ScrollableTabView
-      style={{paddingBottom:50}}
-      tabBarUnderlineColor='#4caf50'
-      tabBarInactiveTextColor='gray'
-      tabBarActiveTextColor='#4caf50'
-      ref="scrollableTabView"
-      initialPage={0}
-      renderTabBar={() => <ScrollableTabBar underlineHeight={2}/>}
-      >
-      <PopularPage tabLabel='ALL' homeComponent={this}/>
-      <PopularPage tabLabel='iOS' homeComponent={this}/>
-      <PopularPage tabLabel='Android' homeComponent={this}/>
-      <PopularPage tabLabel='JavaScript' homeComponent={this}/>
-      <PopularPage tabLabel='Java' homeComponent={this}/>
-      <PopularPage tabLabel='Go' homeComponent={this}/>
-      <PopularPage tabLabel='CSS' homeComponent={this}/>
-      <PopularPage tabLabel='Object-c' homeComponent={this}/>
-      <PopularPage tabLabel='Python' homeComponent={this}/>
-      <PopularPage tabLabel='Swift' homeComponent={this}/>
-      <PopularPage tabLabel='HTML' homeComponent={this}/>
-    </ScrollableTabView>;
+    var component=
+      <View style={{flex:1}}>
+        <NavigationBar
+          title='Popular'/>
+        <ScrollableTabView
+          style={{paddingBottom:50}}
+          tabBarUnderlineColor='#4caf50'
+          tabBarInactiveTextColor='gray'
+          tabBarActiveTextColor='#4caf50'
+          ref="scrollableTabView"
+          initialPage={0}
+          renderTabBar={() => <ScrollableTabBar underlineHeight={2}/>}
+          >
+          <PopularPage tabLabel='ALL' homeComponent={this}/>
+          <PopularPage tabLabel='iOS' homeComponent={this}/>
+          <PopularPage tabLabel='Android' homeComponent={this}/>
+          <PopularPage tabLabel='JavaScript' homeComponent={this}/>
+          <PopularPage tabLabel='Java' homeComponent={this}/>
+          <PopularPage tabLabel='Go' homeComponent={this}/>
+          <PopularPage tabLabel='CSS' homeComponent={this}/>
+          <PopularPage tabLabel='Object-c' homeComponent={this}/>
+          <PopularPage tabLabel='Python' homeComponent={this}/>
+          <PopularPage tabLabel='Swift' homeComponent={this}/>
+          <PopularPage tabLabel='HTML' homeComponent={this}/>
+        </ScrollableTabView>
+      </View>
     return this._navigator(()=>component, 'Popular');
   },
   _tbItem(title,icon,selectedTab,navigator){

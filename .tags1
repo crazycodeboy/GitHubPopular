@@ -5,5 +5,8 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 ReactNative	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^var ReactNative=require('react-native');$/;"	variable	line:7
-render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^  render:function() {$/;"	function	line:18
-RepositoryDetail	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^var RepositoryDetail=React.createClass({$/;"	variable	line:17
+getInitialState	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^  getInitialState(){$/;"	function	line:20
+setFavoriteState	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^  setFavoriteState(isFavorite:boolean){$/;"	function	line:28
+onRightButtonClick	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^  onRightButtonClick(){\/\/favoriteIcon单击回调函数$/;"	function	line:34
+render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^  render:function() {$/;"	function	line:43
+NavigationBar	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^var NavigationBar=require('.\/NavigationBar')$/;"	variable	line:16

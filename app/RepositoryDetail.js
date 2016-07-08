@@ -13,8 +13,33 @@ var{
   Text,
   View,
 }=ReactNative;
-
+var NavigationBar=require('./NavigationBar')
+var FavoriteDao=require('./FavoriteDao')
+var favoriteDao = new FavoriteDao()
 var RepositoryDetail=React.createClass({
+  getInitialState(){
+    return{
+      isFavorite:this.props.projectModel.isFavorite,
+      favoriteIcon:this.props.projectModel.isFavorite? require('../res/images/ic_star_border_white_24dp.png'):require('../res/images/ic_star_border_gray_white_24dp.png'),
+
+    }
+  },
+
+  setFavoriteState(isFavorite:boolean){
+    this.setState({
+      isFavorite:isFavorite,
+      favoriteIcon:isFavorite? require('../res/images/ic_star_border_white_24dp.png'):require('../res/images/ic_star_border_gray_white_24dp.png')
+    })
+  },
+  onRightButtonClick(){//favoriteIcon单击回调函数
+    var projectModel=this.props.projectModel;
+    this.setFavoriteState(projectModel.isFavorite=!projectModel.isFavorite);
+    if(projectModel.isFavorite){
+      favoriteDao.saveFavoriteItem(projectModel.item.id.toString(),JSON.stringify(projectModel.item));
+    }else {
+      favoriteDao.removeFavoriteItem(projectModel.item.id.toString());
+    }
+  },
   render:function() {
     var item=this.props.projectModel.item;
     return(
@@ -26,10 +51,18 @@ var RepositoryDetail=React.createClass({
       //     <Text>{item.owner.login}</Text>
       //   </View>
       // </ScrollView>
-      <WebView
-        style={styles.container}
-        source={{uri:item.html_url}}
-      />
+      <View style={styles.container}>
+        <NavigationBar
+          navigator={this.props.navigator}
+          backButtonTitle='Back'
+          title={item.full_name}
+          rightButtonIcon={this.state.favoriteIcon}
+          onRightButtonClick={this.onRightButtonClick}
+        />
+        <WebView
+          source={{uri:item.html_url}}/>
+      </View>
+
     );
   },
 });
