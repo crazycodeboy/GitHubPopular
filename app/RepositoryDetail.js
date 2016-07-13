@@ -61,6 +61,7 @@ var RepositoryDetail=React.createClass({
           onRightButtonClick={this.onRightButtonClick}
         />
         <WebView
+          startInLoadingState={true}
           source={{uri:item.html_url}}/>
       </View>
 
