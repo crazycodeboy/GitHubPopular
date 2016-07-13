@@ -18,6 +18,7 @@ var NavigationBar=React.createClass({
     navigator:React.PropTypes.object,
     backButtonTitle: React.PropTypes.string,
     backButtonIcon: Image.propTypes.source,
+    popEnabled:React.PropTypes.bool,
     onBackButtonClick: React.PropTypes.func,
     title:React.PropTypes.string,
     rightButtonTitle: React.PropTypes.string,
@@ -27,6 +28,7 @@ var NavigationBar=React.createClass({
   getDefaultProps() {
     return {
       title: '',
+      popEnabled:true
     };
   },
 
@@ -44,7 +46,7 @@ var NavigationBar=React.createClass({
     )
   },
   onBackButtonClick(){
-    if (this.props.navigator)this.props.navigator.pop();
+    if (this.props.navigator&&this.props.popEnabled)this.props.navigator.pop();
     if(this.props.onBackButtonClick)this.props.onBackButtonClick();
   },
   rightView(){
