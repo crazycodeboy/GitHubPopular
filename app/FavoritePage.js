@@ -17,7 +17,7 @@ var {
 var RepositoryCell=require('./RepositoryCell')
 var dismissKeyboard=require('dismissKeyboard')
 var RepositoryDetail=require('./RepositoryDetail')
-var FavoriteDao=require('./FavoriteDao')
+var FavoriteDao=require('./dao/FavoriteDao')
 var ProjectModel=require('./model/ProjectModel')
 var NavigationBar=require('./NavigationBar')
 // var API_URL ='https://api.github.com/search/repositories?q=ios&sort=stars';

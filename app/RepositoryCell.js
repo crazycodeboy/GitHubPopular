@@ -29,6 +29,7 @@ var RespositoryCell = React.createClass({
     this.setFavoriteState(nextProps.projectModel.isFavorite)
   },
   setFavoriteState(isFavorite:boolean){
+    this.props.projectModel.isFavorite=isFavorite;
     this.setState({
       isFavorite:isFavorite,
       favoriteIcon:isFavorite? require('../res/images/ic_star_border_green_24dp.png'):require('../res/images/ic_star_border_gray_24dp.png')

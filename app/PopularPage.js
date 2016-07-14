@@ -18,7 +18,8 @@ var {
 var RepositoryCell=require('./RepositoryCell')
 var dismissKeyboard=require('dismissKeyboard')
 var RepositoryDetail=require('./RepositoryDetail')
-var FavoriteDao=require('./FavoriteDao')
+var FavoriteDao=require('./dao/FavoriteDao')
+var RespositoryDao=require('./dao/RespositoryDao')
 var ProjectModel=require('./model/ProjectModel')
 var API_URL ='https://api.github.com/search/repositories?q='
 var QUERY_STR='&sort=stars'
@@ -28,6 +29,7 @@ var navigatorFrom
 var projectModels=[];
 // var items=[];
 var favoriteDao = new FavoriteDao()
+var respositoryDao=new RespositoryDao()
 var PopularPage=React.createClass({
   getInitialState: function(){
     return{
@@ -44,6 +46,7 @@ var PopularPage=React.createClass({
   componentDidMount:function(){
     this.props.homeComponent.updateFavorite=this.updateFavorite;//向homeComponent注册updateFavorite回调，以便监听Tab切换事件
     this.loadData();
+    // this.fetchCache();
   },
   componentWillReceiveProps:function(nextProps:Object) {//当从当前页面切换走，再切换回来后
     nextProps.homeComponent.updateFavorite=this.updateFavorite;//向homeComponent注册updateFavorite回调，以便监听Tab切换事件
@@ -72,15 +75,26 @@ var PopularPage=React.createClass({
       })
       if (isFlush) this.flushFavoriteState();
     }).catch((error)=>{
+      if (isFlush) this.flushFavoriteState();
       console.log(error);
     });
   },
   genFetchUrl(category:string){
     return API_URL+(category==='ALL'? 'stars:>1':category)+QUERY_STR;
   },
+  fetchCache(){
+    respositoryDao.getRespository(this.props.tabLabel).then((items)=>{
+      this.setState({
+        items:items,
+        isLoading:true,
+        isLodingFail:false
+      })
 
+    }).catch((error)=>{
+
+    });
+  },
   loadData:function(){
-    this.getFavoriteItems(false);
     this.setState({
       isLoading:true,
       isLodingFail:false,
@@ -96,7 +110,8 @@ var PopularPage=React.createClass({
       this.setState({
         items:responseData.items
       })
-      this.flushFavoriteState();
+      this.getFavoriteItems(true);
+      respositoryDao.saveRespository(this.props.tabLabel,responseData.items);
     })
     .done();
   },
@@ -126,17 +141,6 @@ var PopularPage=React.createClass({
         projectModel:projectModel,
       });
     }
-  },
-  onShowMessage(alertMessage:string){
-    Alert.alert(
-
-          'Alert Title',
-          alertMessage,
-          [
-            {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
-            {text: 'OK', onPress: () => console.log('OK Pressed!')},
-          ]
-        )
   },
   onFavorite(item:Object,isFavorite:boolean){//favoriteIcon单击回调函数
     if(isFavorite){

@@ -14,7 +14,7 @@ var{
   View,
 }=ReactNative;
 var NavigationBar=require('./NavigationBar');
-var FavoriteDao=require('./FavoriteDao');
+var FavoriteDao=require('./dao/FavoriteDao');
 var favoriteDao = new FavoriteDao();
 var WEBVIEW_REF = 'webview';
 var RepositoryDetail=React.createClass({
