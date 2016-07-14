@@ -117,7 +117,7 @@ var PopularPage=React.createClass({
         items:responseData.items?responseData.items:[]
       })
       this.getFavoriteKeys(true);
-      respositoryDao.saveRespository(this.props.tabLabel,responseData.items);
+      if(responseData)respositoryDao.saveRespository(this.props.tabLabel,responseData.items);
     })
     .done();
   },

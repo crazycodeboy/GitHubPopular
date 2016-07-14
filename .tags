@@ -104,6 +104,15 @@ onPressFavorite	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/Reposit
 render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^  render: function() {$/;"	function	line:42
 RespositoryCell	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^var RespositoryCell = React.createClass({$/;"	variable	line:20
 styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryCell.js	/^var styles = StyleSheet.create({$/;"	variable	line:93
+getInitialState	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^ getInitialState: function() {$/;"	function	line:25
+componentDidMount	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^ componentDidMount:function(){$/;"	function	line:30
+onSelected	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  onSelected:function(object:string) {$/;"	function	line:33
+_renderScene	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  _renderScene(route, navigator) {$/;"	function	line:39
+_navigator	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  _navigator(defaultComponent,defaultName){$/;"	function	line:45
+_popularNavigator	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  _popularNavigator(){$/;"	function	line:60
+_tbItem	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  _tbItem(title,icon,selectedTab,navigator){$/;"	function	line:89
+render	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  render:function() {$/;"	function	line:102
+MostPopularInGitHub	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^var MostPopularInGitHub=React.createClass({$/;"	variable	line:24
 RepositoryCell	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^var RepositoryCell=require('.\/RepositoryCell')$/;"	variable	line:18
 getInitialState	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  getInitialState: function(){$/;"	function	line:34
 componentDidMount	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  componentDidMount:function(){$/;"	function	line:46
@@ -123,12 +132,3 @@ renderRow	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.j
 renderSeparator	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  renderSeparator: function($/;"	function	line:184
 render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  render() {$/;"	function	line:198
 styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^var styles = StyleSheet.create({$/;"	variable	line:236
-getInitialState	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^ getInitialState: function() {$/;"	function	line:25
-componentDidMount	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^ componentDidMount:function(){$/;"	function	line:30
-onSelected	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  onSelected:function(object:string) {$/;"	function	line:33
-_renderScene	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  _renderScene(route, navigator) {$/;"	function	line:39
-_navigator	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  _navigator(defaultComponent,defaultName){$/;"	function	line:45
-_popularNavigator	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  _popularNavigator(){$/;"	function	line:60
-_tbItem	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  _tbItem(title,icon,selectedTab,navigator){$/;"	function	line:89
-render	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  render:function() {$/;"	function	line:102
-MostPopularInGitHub	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^var MostPopularInGitHub=React.createClass({$/;"	variable	line:24
