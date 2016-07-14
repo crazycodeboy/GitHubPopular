@@ -46,7 +46,7 @@ var PopularPage=React.createClass({
   componentDidMount:function(){
     this.props.homeComponent.updateFavorite=this.updateFavorite;//向homeComponent注册updateFavorite回调，以便监听Tab切换事件
     this.loadData();
-    // this.fetchCache();
+    this.fetchCache();
   },
   componentWillReceiveProps:function(nextProps:Object) {//当从当前页面切换走，再切换回来后
     nextProps.homeComponent.updateFavorite=this.updateFavorite;//向homeComponent注册updateFavorite回调，以便监听Tab切换事件
@@ -85,13 +85,17 @@ var PopularPage=React.createClass({
     return API_URL+(category==='ALL'? 'stars:>1':category)+QUERY_STR;
   },
   fetchCache(){
+    this.setState({
+      isLoading:true,
+      isLodingFail:false,
+    });
     respositoryDao.getRespository(this.props.tabLabel).then((items)=>{
-      this.setState({
-        items:items,
-        isLoading:true,
-        isLodingFail:false
-      })
-
+      if(items){
+        this.setState({
+          items:items
+        })
+        this.getFavoriteKeys(true);
+      }
     }).catch((error)=>{
 
     });
@@ -110,7 +114,7 @@ var PopularPage=React.createClass({
       });
     }).then((responseData)=>{
       this.setState({
-        items:responseData.items
+        items:responseData.items?responseData.items:[]
       })
       this.getFavoriteKeys(true);
       respositoryDao.saveRespository(this.props.tabLabel,responseData.items);
