@@ -35,7 +35,7 @@ var PopularPage=React.createClass({
     return{
       isLoading:false,
       isLodingFail:false,
-      favoritItems:[],
+      favoritKeys:[],
       items:[],
       dataSource:new ListView.DataSource({
         rowHasChanged:(row1,row2)=>row1!==row2,
@@ -54,7 +54,7 @@ var PopularPage=React.createClass({
   },
   updateFavorite(selectedTab:string){
     console.log(selectedTab);
-    this.getFavoriteItems(true);
+    this.getFavoriteKeys(true);
   },
   flushFavoriteState(){//更新ProjectItem的Favorite状态
     projectModels=[];
@@ -68,11 +68,13 @@ var PopularPage=React.createClass({
       dataSource:this.getDataSource(projectModels),
     });
   },
-  getFavoriteItems(isFlush:boolean){//获取本地用户收藏的ProjectItem
-    favoriteDao.getAllItems().then((items)=>{
-      this.setState({
-        favoritItems:items
-      })
+  getFavoriteKeys(isFlush:boolean){//获取本地用户收藏的ProjectItem
+    favoriteDao.getFavoriteKeys().then((keys)=>{
+      if(keys){
+        this.setState({
+          favoritKeys:keys
+        })
+      }
       if (isFlush) this.flushFavoriteState();
     }).catch((error)=>{
       if (isFlush) this.flushFavoriteState();
@@ -110,7 +112,7 @@ var PopularPage=React.createClass({
       this.setState({
         items:responseData.items
       })
-      this.getFavoriteItems(true);
+      this.getFavoriteKeys(true);
       respositoryDao.saveRespository(this.props.tabLabel,responseData.items);
     })
     .done();
@@ -150,8 +152,8 @@ var PopularPage=React.createClass({
     }
   },
   checkFavorite(item:Object){//检查该Item是否被收藏
-     for(var i=0,len=this.state.favoritItems.length;i<len;i++){
-       if(item.id===this.state.favoritItems[i].id){
+     for(var i=0,len=this.state.favoritKeys.length;i<len;i++){
+       if(item.id.toString()===this.state.favoritKeys[i]){
          return true;
        }
     }
@@ -168,7 +170,7 @@ var PopularPage=React.createClass({
         key={projectModel.item.id}
         onSelect={()=>this.onSelectRepository(projectModel)}
         projectModel={projectModel}
-        favoritItems={this.state.favoritItems}
+        //favoritKeys={this.state.favoritKeys}
         //isFavorite={this.checkFavorite(item)}
         onFavorite={this.onFavorite}
         onHighlight={() => highlightRowFunc(sectionID, rowID)}
