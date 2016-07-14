@@ -4,22 +4,12 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-RepositoryCell	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^var RepositoryCell=require('.\/RepositoryCell')$/;"	variable	line:18
-getInitialState	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  getInitialState: function(){$/;"	function	line:34
-componentDidMount	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  componentDidMount:function(){$/;"	function	line:46
-componentWillReceiveProps	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  componentWillReceiveProps:function(nextProps:Object) {\/\/当从当前页面切换走，再切换回来后$/;"	function	line:51
-updateFavorite	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  updateFavorite(selectedTab:string){$/;"	function	line:55
-flushFavoriteState	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  flushFavoriteState(){\/\/更新ProjectItem的Favorite状态$/;"	function	line:59
-getFavoriteKeys	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  getFavoriteKeys(isFlush:boolean){\/\/获取本地用户收藏的ProjectItem$/;"	function	line:71
-genFetchUrl	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  genFetchUrl(category:string){$/;"	function	line:84
-fetchCache	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  fetchCache(){$/;"	function	line:87
-loadData	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  loadData:function(){$/;"	function	line:103
-onRefresh	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  onRefresh :function() {$/;"	function	line:124
-getDataSource	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  getDataSource:function(items:Array<any>):ListView.DataSource{$/;"	function	line:127
-onSelectRepository	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  onSelectRepository:function(projectModel:Object) {$/;"	function	line:130
-onFavorite	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  onFavorite(item:Object,isFavorite:boolean){\/\/favoriteIcon单击回调函数$/;"	function	line:151
-checkFavorite	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  checkFavorite(item:Object){\/\/检查该Item是否被收藏$/;"	function	line:158
-renderRow	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  renderRow:function($/;"	function	line:166
-renderSeparator	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  renderSeparator: function($/;"	function	line:184
-render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^  render() {$/;"	function	line:198
-styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/PopularPage.js	/^var styles = StyleSheet.create({$/;"	variable	line:236
+getInitialState	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^ getInitialState: function() {$/;"	function	line:25
+componentDidMount	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^ componentDidMount:function(){$/;"	function	line:30
+onSelected	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  onSelected:function(object:string) {$/;"	function	line:33
+_renderScene	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  _renderScene(route, navigator) {$/;"	function	line:39
+_navigator	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  _navigator(defaultComponent,defaultName){$/;"	function	line:45
+_popularNavigator	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  _popularNavigator(){$/;"	function	line:60
+_tbItem	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  _tbItem(title,icon,selectedTab,navigator){$/;"	function	line:89
+render	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^  render:function() {$/;"	function	line:102
+MostPopularInGitHub	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.ios.js	/^var MostPopularInGitHub=React.createClass({$/;"	variable	line:24

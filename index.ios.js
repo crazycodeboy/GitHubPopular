@@ -8,7 +8,6 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  NavigatorIOS,
   Navigator,
   Platform,
   TouchableOpacity,
@@ -41,57 +40,6 @@ var MostPopularInGitHub=React.createClass({
     let Component = route.component;
     return (
       <Component {...route.params} navigator={navigator} />
-    );
-  },
-  _renderNavBar(defaultTitle) {
-    var routeMapper = {
-      LeftButton(route, navigator, index, navState) {
-        if(index > 0) {
-          return (
-            <TouchableOpacity
-              onPress={() => navigator.pop()}
-              style={styles.button}>
-              <Text style={styles.buttonText}>Back</Text>
-            </TouchableOpacity>
-          );
-        } else {
-          return null
-          // (
-          //   <TouchableOpacity
-          //     onPress={() => navigator.pop()}
-          //     style={styles.button}>
-          //     <Text style={styles.buttonText}>Logo</Text>
-          //   </TouchableOpacity>
-          // );
-        }
-      },
-      RightButton(route, navigator, index, navState) {
-        if(index > 0 && route.rightButton) {
-          return (
-            <TouchableOpacity
-              onPress={() => navigator.pop()}
-              style={styles.button}>
-              <Text style={styles.buttonText}></Text>
-            </TouchableOpacity>
-          );
-        } else {
-          return null
-        }
-
-      },
-      Title(route, navigator, index, navState) {
-        return (
-          <View style={styles.title}>
-            <Text style={styles.buttonText}>{route.title ? route.title : defaultTitle}</Text>
-          </View>
-        );
-      }
-    };
-    return (
-      <Navigator.NavigationBar
-        style={styles.navBar}
-        routeMapper={routeMapper}
-      />
     );
   },
   _navigator(defaultComponent,defaultName){
