@@ -5,8 +5,8 @@
  */
 
 import React, { Component } from 'react';
-import { Tab, TabLayout } from 'react-native-android-tablayout'
-import Labels from './Labels';
+// import { Tab, TabLayout } from 'react-native-android-tablayout'
+// import Labels from './Labels';
 import {
   AppRegistry,
   StyleSheet,
@@ -15,7 +15,7 @@ import {
   ViewPagerAndroid,
   View
 } from 'react-native';
-var MostPopular=require('./MostPopular.js');
+// var MostPopular=require('./MostPopular.js');
 class MostPopularInGitHub extends Component {
   constructor() {
     super(...arguments);
@@ -27,7 +27,7 @@ class MostPopularInGitHub extends Component {
   render() {
     return (
       <View>
-        <TabLayout
+        {/*<TabLayout
           style={styles.tabLayout}
           selectedTab={this.state.pagePosition}
           onTabSelected={this._setPagePosition.bind(this)}>
@@ -48,7 +48,8 @@ class MostPopularInGitHub extends Component {
           <View style={styles.content}>
             <Text>Tab 3 content</Text>
           </View>
-        </ViewPagerAndroid>
+        </ViewPagerAndroid>*/}
+        <Text>首页</Text>
       </View>
     )
   }
