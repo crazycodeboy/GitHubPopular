@@ -130,23 +130,14 @@ var PopularPage=React.createClass({
   onSelectRepository:function(projectModel:Object) {
     var belongNavigator=this.props.homeComponent.refs.navPopular;
     var item=projectModel.item;
-    if (Platform.OS==='ios') {
-      belongNavigator.push({
-        title:item.full_name,
-        component:RepositoryDetail,
-        params:{
-          projectModel:projectModel,
-          parentComponent:this
-        },
-      });
-    }else {
-      dismissKeyboard();
-      belongNavigator.push({
-        title:item.full_name,
-        name:'item',
+    belongNavigator.push({
+      title:item.full_name,
+      component:RepositoryDetail,
+      params:{
         projectModel:projectModel,
-      });
-    }
+        parentComponent:this
+      },
+    });
   },
   onFavorite(item:Object,isFavorite:boolean){//favoriteIcon单击回调函数
     if(isFavorite){

@@ -4,16 +4,15 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-getInitialState	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  getInitialState: function(){$/;"	function	line:27
-componentDidMount	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  componentDidMount:function(){$/;"	function	line:37
-componentWillReceiveProps	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  componentWillReceiveProps:function(nextProps:Object) {\/\/当从当前页面切换走，再切换回来后$/;"	function	line:40
-loadData	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  loadData:function(isShowLoading:boolean){$/;"	function	line:43
-onRefresh	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onRefresh :function() {$/;"	function	line:66
-getDataSource	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  getDataSource:function(items:Array<any>):ListView.DataSource{$/;"	function	line:69
-onSelectRepository	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onSelectRepository:function(projectModel:Object) {$/;"	function	line:72
-onFavorite	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onFavorite(item:Object,isFavorite:boolean){$/;"	function	line:92
-renderRow	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  renderRow:function($/;"	function	line:99
-renderSeparator	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  renderSeparator: function($/;"	function	line:113
-render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  render() {$/;"	function	line:127
-RepositoryCell	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^var RepositoryCell=require('.\/RepositoryCell')$/;"	variable	line:17
-styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^var styles = StyleSheet.create({$/;"	variable	line:157
+ReactNative	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^var ReactNative=require('react-native');$/;"	variable	line:7
+NavigationBar	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^var NavigationBar=require('.\/NavigationBar');$/;"	variable	line:17
+FavoriteDao	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^var FavoriteDao=require('.\/dao\/FavoriteDao');$/;"	variable	line:18
+WEBVIEW_REF	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^var WEBVIEW_REF = 'webview';$/;"	variable	line:20
+getInitialState	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^  getInitialState(){$/;"	function	line:22
+componentWillUnmount	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^  componentWillUnmount:function(){$/;"	function	line:31
+setFavoriteState	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^  setFavoriteState(isFavorite:boolean){$/;"	function	line:34
+onRightButtonClick	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^  onRightButtonClick(){\/\/favoriteIcon单击回调函数$/;"	function	line:40
+onBackButtonClick	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^  onBackButtonClick(){$/;"	function	line:49
+onNavigationStateChange	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^  onNavigationStateChange(navState:Object) {$/;"	function	line:56
+render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^  render:function() {$/;"	function	line:65
+RepositoryDetail	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/RepositoryDetail.js	/^var RepositoryDetail=React.createClass({$/;"	variable	line:21

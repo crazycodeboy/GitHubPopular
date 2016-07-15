@@ -10,6 +10,7 @@ var{
   ScrollView,
   StyleSheet,
   WebView,
+  Platform,
   Text,
   View,
 }=ReactNative;
@@ -96,7 +97,7 @@ const styles=StyleSheet.create({
   container: {
     flex:1,
     backgroundColor:'#ffffff',
-    marginBottom:50
+    marginBottom:Platform.OS==="ios"?50:0,
   },
 })
 module.exports=RepositoryDetail
