@@ -66,7 +66,7 @@ var MostPopularInGitHub=React.createClass({
         <NavigationBar
           title='Popular'/>
         <ScrollableTabView
-          style={{paddingBottom:50}}
+          //style={{paddingBottom:50}}
           tabBarUnderlineColor='#4caf50'
           tabBarInactiveTextColor='gray'
           tabBarActiveTextColor='#4caf50'

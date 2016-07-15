@@ -161,7 +161,7 @@ var styles = StyleSheet.create({
     // backgroundColor:'red'
   },
   listView:{
-    marginTop:-20,
+    marginTop:Platform.OS==="ios"?-20:0,
   },
   separator: {
     height: 1,

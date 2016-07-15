@@ -55,19 +55,6 @@ FavoriteDao.getAllItems	/Users/penn/Desktop/React Native/MostPopularInGItHub/app
 React	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/model/ProjectModel.js	/^var React = require('react-native');$/;"	variable	line:7
 ProjectModel	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/model/ProjectModel.js	/^function ProjectModel(item,isFavorite){$/;"	function	line:9
 ProjectModel	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/model/ProjectModel.js	/^function ProjectModel(item,isFavorite){$/;"	class	line:9
-getInitialState	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  getInitialState: function(){$/;"	function	line:26
-componentDidMount	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  componentDidMount:function(){$/;"	function	line:36
-componentWillReceiveProps	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  componentWillReceiveProps:function(nextProps:Object) {\/\/当从当前页面切换走，再切换回来后$/;"	function	line:39
-loadData	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  loadData:function(isShowLoading:boolean){$/;"	function	line:42
-onRefresh	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onRefresh :function() {$/;"	function	line:65
-getDataSource	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  getDataSource:function(items:Array<any>):ListView.DataSource{$/;"	function	line:68
-onSelectRepository	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onSelectRepository:function(projectModel:Object) {$/;"	function	line:71
-onFavorite	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onFavorite(item:Object,isFavorite:boolean){$/;"	function	line:91
-renderRow	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  renderRow:function($/;"	function	line:98
-renderSeparator	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  renderSeparator: function($/;"	function	line:112
-render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  render() {$/;"	function	line:126
-RepositoryCell	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^var RepositoryCell=require('.\/RepositoryCell')$/;"	variable	line:17
-styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^var styles = StyleSheet.create({$/;"	variable	line:154
 getDefaultProps	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/NavigationBar.js	/^  getDefaultProps() {$/;"	function	line:27
 backView	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/NavigationBar.js	/^  backView(){$/;"	function	line:34
 onBackButtonClick	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/NavigationBar.js	/^  onBackButtonClick(){$/;"	function	line:47
@@ -147,3 +134,16 @@ renderContent	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.android
 switch	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.android.js	/^    switch (this.state.selectedTab) {$/;"	function	line:129
 render	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.android.js	/^  render:function() {$/;"	function	line:143
 MostPopularInGitHub	/Users/penn/Desktop/React Native/MostPopularInGItHub/index.android.js	/^var MostPopularInGitHub=React.createClass({$/;"	variable	line:27
+getInitialState	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  getInitialState: function(){$/;"	function	line:27
+componentDidMount	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  componentDidMount:function(){$/;"	function	line:37
+componentWillReceiveProps	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  componentWillReceiveProps:function(nextProps:Object) {\/\/当从当前页面切换走，再切换回来后$/;"	function	line:40
+loadData	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  loadData:function(isShowLoading:boolean){$/;"	function	line:43
+onRefresh	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onRefresh :function() {$/;"	function	line:66
+getDataSource	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  getDataSource:function(items:Array<any>):ListView.DataSource{$/;"	function	line:69
+onSelectRepository	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onSelectRepository:function(projectModel:Object) {$/;"	function	line:72
+onFavorite	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  onFavorite(item:Object,isFavorite:boolean){$/;"	function	line:92
+renderRow	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  renderRow:function($/;"	function	line:99
+renderSeparator	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  renderSeparator: function($/;"	function	line:113
+render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^  render() {$/;"	function	line:127
+RepositoryCell	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^var RepositoryCell=require('.\/RepositoryCell')$/;"	variable	line:17
+styles	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/FavoritePage.js	/^var styles = StyleSheet.create({$/;"	variable	line:157
