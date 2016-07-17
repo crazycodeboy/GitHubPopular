@@ -72,22 +72,13 @@ var FavoritePage=React.createClass({
   onSelectRepository:function(projectModel:Object) {
     var belongNavigator=this.props.navigator;
     var item=projectModel.item;
-    if (Platform.OS==='ios') {
-      belongNavigator.push({
-        title:item.full_name,
-        component:RepositoryDetail,
-        params:{
-          projectModel:projectModel,
-        },
-      });
-    }else {
-      dismissKeyboard();
-      belongNavigator.push({
-        title:item.full_name,
-        name:'item',
+    belongNavigator.push({
+      title:item.full_name,
+      component:RepositoryDetail,
+      params:{
         projectModel:projectModel,
-      });
-    }
+      },
+    });
   },
   onFavorite(item:Object,isFavorite:boolean){
     if(isFavorite){
