@@ -42,9 +42,9 @@ var RespositoryCell = React.createClass({
   render: function() {
     var item=this.props.projectModel.item;
     var TouchableElement = TouchableHighlight;
-    if (Platform.OS === 'android') {
-      TouchableElement = TouchableNativeFeedback;
-    }
+    // if (Platform.OS === 'android') {
+    //   TouchableElement = TouchableNativeFeedback;
+    // }
     return (
       <TouchableElement
         ref='test'
