@@ -101,30 +101,6 @@ const styles = StyleSheet.create({
   },
   blogText:{
     color:'dodgerblue',fontSize:13,textDecorationLine: 'underline'
-  },
-  navBar:{
-    flexDirection:'row',
-    alignItems: 'center',
-    justifyContent:'space-between',
-    // backgroundColor: 'red',
-    height:44,
-    shadowOffset:{
-        width: 1,
-        height: 0.5,
-    },
-    shadowColor: '#55ACEE',
-    shadowOpacity: 0.8,
-  },
-  titleLayout:{
-    flex:1,alignItems:'center'
-  },
-  title: {
-    fontSize:18, color: '#FFFFFF', fontWeight: '400',
-    // backgroundColor:'blue',
-  },
-  button: {
-    width: 50, alignItems: 'center'
-    // backgroundColor:'red'
-  },
+  },   
 })
 module.exports=AboutPage
