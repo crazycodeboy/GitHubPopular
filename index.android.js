@@ -33,12 +33,13 @@ var MostPopularInGitHub=React.createClass({
  componentDidMount:function(){
    console.log('');
  },
-  onSelected:function(object:string) {
-    if(this.updateFavorite&&'popularTab'===object)this.updateFavorite(object);
-    this.setState({
-      selectedTab:object,
-    })
-  },
+
+ onSelected:function(object:string) {
+  if(this.updateFavorite&&'popularTab'===object)this.updateFavorite(object);
+  this.setState({
+    selectedTab:object,
+  })
+ },
   _renderScene(route, navigator) {
     let Component = route.component;
     return (
@@ -64,6 +65,8 @@ var MostPopularInGitHub=React.createClass({
     var component=
       <View style={{flex:1}}>
         <NavigationBar
+          leftButtonIcon={require('./res/images/ic_menu_white_24dp.png')}
+          onLeftButtonClick={()=>this.refs.drawer.openDrawer()}
           title='Popular'/>
         <ScrollableTabView
           //style={{paddingBottom:50}}
@@ -132,10 +135,10 @@ var MostPopularInGitHub=React.createClass({
         // return <FavoritePage/>;
 
       case 'favoriteTab':
-        return this._navigator(FavoritePage,'Favorite');
+        return this._navigator(()=><FavoritePage drawer={this.refs.drawer}/>,'Favorite');
         // return <FavoritePage/>;
       case 'aboutTab':
-        return this._navigator(AboutPage,'About');
+        return this._navigator(()=><AboutPage drawer={this.refs.drawer}/>,'About');
         // return <FavoritePage/>;
     }
     throw new Error(`Unknown tab ${this.state.selectedTab}`);
@@ -144,7 +147,7 @@ var MostPopularInGitHub=React.createClass({
     return (
       <DrawerLayoutAndroid
         ref='drawer'
-        drawerWidth={290}
+        drawerWidth={260}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
         renderNavigationView={this.renderNavigationView}>
         <View style={styles.content} key={this.state.selectedTab}>

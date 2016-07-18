@@ -18,6 +18,8 @@ var AboutPage=React.createClass({
     return(
         <View style={{flex: 1, backgroundColor: '#fff'}}>
           <NavigationBar
+            leftButtonIcon={require('../res/images/ic_menu_white_24dp.png')}
+            onLeftButtonClick={()=>this.props.drawer.openDrawer()}
             title='About'
           />
           <Text>About</Text>

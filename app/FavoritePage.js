@@ -139,6 +139,8 @@ var FavoritePage=React.createClass({
     return (
         <View style={styles.container} >
           <NavigationBar
+            leftButtonIcon={require('../res/images/ic_menu_white_24dp.png')}
+            onLeftButtonClick={()=>this.props.drawer.openDrawer()}
             title='Favorite'/>
           {content}
         </View>

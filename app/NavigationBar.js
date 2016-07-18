@@ -16,10 +16,10 @@
 var NavigationBar=React.createClass({
   propTypes: {
     navigator:React.PropTypes.object,
-    backButtonTitle: React.PropTypes.string,
-    backButtonIcon: Image.propTypes.source,
+    leftButtonTitle: React.PropTypes.string,
+    leftButtonIcon: Image.propTypes.source,
     popEnabled:React.PropTypes.bool,
-    onBackButtonClick: React.PropTypes.func,
+    onLeftButtonClick: React.PropTypes.func,
     title:React.PropTypes.string,
     rightButtonTitle: React.PropTypes.string,
     rightButtonIcon:Image.propTypes.source,
@@ -32,27 +32,33 @@ var NavigationBar=React.createClass({
     };
   },
 
-  backView(){
-    var backButtonTitle=this.props.backButtonTitle;
-    var backButtonIcon=this.props.backButtonIcon;
-    if (!(backButtonIcon||backButtonTitle)) return;
+  leftView(){
+    // if (!(this.props.leftButtonTitle||this.props.leftButtonIcon)) return;
+    var leftButtonTitle=this.props.leftButtonTitle?
+      <Text style={styles.title}>{this.props.leftButtonTitle}</Text>:null;
+    var leftButtonIcon=this.props.leftButtonIcon?
+      <Image
+        style={{width:26,height:26}}
+        source={this.props.leftButtonIcon}/>:null;
+
     return(
       <TouchableOpacity
-        onPress={this.onBackButtonClick}>
-        <View style={styles.button}>
-          <Text style={styles.title}>{this.props.backButtonTitle}</Text>
+        onPress={this.onLeftButtonClick}>
+        <View style={{width: 50, alignItems: 'center',flex:1,justifyContent:'center'}}>
+          {leftButtonTitle}
+          {leftButtonIcon}
         </View>
       </TouchableOpacity>
     )
   },
-  onBackButtonClick(){
+  onLeftButtonClick(){
     if (this.props.navigator&&this.props.popEnabled)this.props.navigator.pop();
-    if(this.props.onBackButtonClick)this.props.onBackButtonClick();
+    if(this.props.onLeftButtonClick)this.props.onLeftButtonClick();
   },
   rightView(){
     var rightButtonTitle=this.props.rightButtonTitle;
     var rightButtonIcon=this.props.rightButtonIcon;
-    if (!(rightButtonTitle||rightButtonIcon)) return;
+    // if (!(rightButtonTitle||rightButtonIcon)) return;
     var titleView=this.props.rightButtonTitle?
      <Text style={styles.title}>{this.props.rightButtonTitle}</Text>:null;
     return(
@@ -77,8 +83,8 @@ var NavigationBar=React.createClass({
       <View style={styles.container}>
         {stateBar}
         <View style={styles.navBar}>
-          {this.backView()}
-          <View style={{flex:1,alignItems: 'center'}}>
+          {this.leftView()}
+          <View style={styles.titleLayout}>
             <Text style={styles.title}>{this.props.title}</Text>
           </View>
           {this.rightView()}
@@ -94,6 +100,7 @@ const styles = StyleSheet.create({
   navBar:{
     flexDirection:'row',
     alignItems: 'center',
+    justifyContent:'space-between',
     // backgroundColor: 'red',
     height:44,
     shadowOffset:{
@@ -103,12 +110,15 @@ const styles = StyleSheet.create({
     shadowColor: '#55ACEE',
     shadowOpacity: 0.8,
   },
+  titleLayout:{
+    flex:1,alignItems:'center'
+  },
   title: {
     fontSize:18, color: '#FFFFFF', fontWeight: '400',
-    // backgroundColor:'blue'
+    // backgroundColor:'blue',
   },
   button: {
-    width: 50, alignItems: 'center',flex:1,justifyContent:'center',
+    width: 50, alignItems: 'center'
     // backgroundColor:'red'
   },
 })

@@ -46,7 +46,7 @@ var RepositoryDetail=React.createClass({
       favoriteDao.removeFavoriteItem(projectModel.item.id.toString());
     }
   },
-  onBackButtonClick(){
+  onLeftButtonClick(){
     if(this.state.canGoBack){
       this.refs[WEBVIEW_REF].goBack();
     }else {
@@ -76,9 +76,9 @@ var RepositoryDetail=React.createClass({
       <View style={styles.container}>
         <NavigationBar
           navigator={this.props.navigator}
-          backButtonTitle='Back'
+          leftButtonTitle='Back'
           popEnabled={false}
-          onBackButtonClick={this.onBackButtonClick}
+          onLeftButtonClick={this.onLeftButtonClick}
           title={this.state.title}
           rightButtonIcon={this.state.favoriteIcon}
           onRightButtonClick={this.onRightButtonClick}
