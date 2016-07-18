@@ -10,6 +10,7 @@ var{
   ScrollView,
   StyleSheet,
   Platform,
+  Linking,
   Text,
   View,
 }=ReactNative;
@@ -27,34 +28,59 @@ var AboutPage=React.createClass({
         <View style={styles.container}>
           {navigationBar}
           <View style={styles.content}>
-            <Text style={{color:'grey',textDecorationLine: 'underline'}}>
+            <Text style={{}}>
               It's a GitHub most popular repositories viewer with React Native.
             </Text>
-            <Text style={{color:'dodgerblue'}}>
+            <Text style={styles.blogText}
+              onPress={()=>Linking.openURL('http://github.com/crazycodeboy')}
+              >
               This project is open source in GitHub.
             </Text>
-            <Text>
+            <Text style={{marginTop:20,fontWeight:'600'}}>
               About Me:
             </Text>
-            <View style={{flexDirection:'row'}}>
-              {/*<Image
-                style={{width:56,height:56,}}
-                source={{uri:'http://avatar.csdn.net/1/1/E/1_fengyuzhengfan.jpg'}}
-              />*/}
-              <View style={{flex:1}}>
-                <Text>
-                  In GitHub:https://git.oschina.net/crazycodeboy/
+            <View
+              style={styles.textLayout}>
+              <Text style={styles.blogName}>GitHub: </Text>
+              <Text
+                style={styles.blogText}
+                onPress={()=>Linking.openURL('http://github.com/crazycodeboy')}
+                >
+                github.com/crazycodeboy
+               </Text>
+              </View>
+              <View
+                style={styles.textLayout}>
+                <Text style={styles.blogName}>CSDN: </Text>
+                <Text
+                  style={styles.blogText}
+                  onPress={()=>Linking.openURL('http://blog.csdn.net/fengyuzhengfan/')}
+                  >
+                  blog.csdn.net/fengyuzhengfan/
                 </Text>
-                <Text>
-                  In CSDN:http://blog.csdn.net/fengyuzhengfan/
+              </View>
+              <View
+                style={styles.textLayout}>
+                <Text style={styles.blogName}>jianshu: </Text>
+                <Text
+                  style={styles.blogText}
+                  onPress={()=>Linking.openURL('http://jianshu.com/users/ca3943a4172a/latest_articles')}
+                  >
+                  jianshu.com/users/ca3943a4172a/latest_articles
                 </Text>
-                <Text>
-                  In JianShu:http://www.jianshu.com/users/ca3943a4172a/latest_articles
+              </View>
+              <View
+                style={styles.textLayout}>
+                <Text style={styles.blogName}>Emai: </Text>
+                <Text
+                  style={styles.blogText}
+                  //onPress={()=>Linking.openURL('email:crazycodeboy@gmail.com')}
+                  >
+                  crazycodeboy@gmail.com
                 </Text>
               </View>
             </View>
           </View>
-         </View>
     );
   },
 });
@@ -66,6 +92,15 @@ const styles = StyleSheet.create({
     paddingTop:20,
     paddingLeft:10,
     paddingRight:10
+  },
+  textLayout:{
+    flexDirection:'row',alignItems:'center'
+  },
+  blogName:{
+    fontSize:13,color:'gray',fontWeight:'400'
+  },
+  blogText:{
+    color:'dodgerblue',fontSize:13,textDecorationLine: 'underline'
   },
   navBar:{
     flexDirection:'row',

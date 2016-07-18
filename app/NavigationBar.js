@@ -103,12 +103,12 @@ const styles = StyleSheet.create({
     justifyContent:'space-between',
     // backgroundColor: 'red',
     height:44,
-    shadowOffset:{
-        width: 1,
-        height: 0.5,
-    },
-    shadowColor: '#55ACEE',
-    shadowOpacity: 0.8,
+    // shadowOffset:{
+    //     width: 1,
+    //     height: 0.5,
+    // },
+    // shadowColor: '#55ACEE',
+    // shadowOpacity: 0.8,
   },
   titleLayout:{
     flex:1,alignItems:'center'
