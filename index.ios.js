@@ -1,5 +1,5 @@
 /**
- * MostPopular
+ * GitHubPopular
  * @flow
  */
 
@@ -21,7 +21,7 @@ var PopularPage=require('./app/PopularPage')
 var FavoritePage=require('./app/FavoritePage')
 var NavigationBar=require('./app/NavigationBar')
 var updateFavorite;
-var MostPopularInGitHub=React.createClass({
+var GitHubPopular=React.createClass({
  getInitialState: function() {
    return {
      selectedTab: 'popularTab',
@@ -138,4 +138,4 @@ const styles = StyleSheet.create({
   }
 })
 
-AppRegistry.registerComponent('MostPopularInGitHub', () => MostPopularInGitHub);
+AppRegistry.registerComponent('GitHubPopular', () => GitHubPopular);

@@ -4,6 +4,6 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-ReactNative	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/AboutPage.js	/^var ReactNative=require('react-native');$/;"	variable	line:7
-render	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/AboutPage.js	/^  render:function() {$/;"	function	line:18
-NavigationBar	/Users/penn/Desktop/React Native/MostPopularInGItHub/app/AboutPage.js	/^var NavigationBar=require('.\/NavigationBar')$/;"	variable	line:16
+ReactNative	/Users/penn/Desktop/React Native/GitHubPopular/app/AboutPage.js	/^var ReactNative=require('react-native');$/;"	variable	line:7
+render	/Users/penn/Desktop/React Native/GitHubPopular/app/AboutPage.js	/^  render:function() {$/;"	function	line:18
+NavigationBar	/Users/penn/Desktop/React Native/GitHubPopular/app/AboutPage.js	/^var NavigationBar=require('.\/NavigationBar')$/;"	variable	line:16

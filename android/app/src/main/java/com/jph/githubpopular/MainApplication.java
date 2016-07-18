@@ -1,4 +1,4 @@
-package com.mostpopularingithub;
+package com.jph.githubpopular;
 
 import android.app.Application;
 import android.util.Log;
