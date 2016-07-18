@@ -136,12 +136,16 @@ var FavoritePage=React.createClass({
             progressBackgroundColor="#ffff00"
          />}
       />;
+    var navigationBar=Platform.OS==="android"?
+      <NavigationBar
+        leftButtonIcon={require('../res/images/ic_menu_white_24dp.png')}
+        onLeftButtonClick={()=>this.props.drawer.openDrawer()}
+        title='Favorite'/>:
+        <NavigationBar
+          title='Favorite'/>;
     return (
         <View style={styles.container} >
-          <NavigationBar
-            leftButtonIcon={require('../res/images/ic_menu_white_24dp.png')}
-            onLeftButtonClick={()=>this.props.drawer.openDrawer()}
-            title='Favorite'/>
+          {navigationBar}
           {content}
         </View>
     );
