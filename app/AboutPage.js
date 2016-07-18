@@ -29,7 +29,7 @@ var AboutPage=React.createClass({
           {navigationBar}
           <View style={styles.content}>
             <Text style={{}}>
-              It's a GitHub most popular repositories viewer with React Native.
+              This is a GitHub most popular repositories viewer with React Native.
             </Text>
             <Text style={styles.blogText}
               onPress={()=>Linking.openURL('http://github.com/crazycodeboy')}
@@ -101,6 +101,6 @@ const styles = StyleSheet.create({
   },
   blogText:{
     color:'dodgerblue',fontSize:13,textDecorationLine: 'underline'
-  },   
+  },
 })
 module.exports=AboutPage
