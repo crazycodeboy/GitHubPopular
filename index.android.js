@@ -135,10 +135,10 @@ var GitHubPopular=React.createClass({
         // return <FavoritePage/>;
 
       case 'favoriteTab':
-        return this._navigator(()=><FavoritePage drawer={this.refs.drawer}/>,'Favorite');
+        return this._navigator(()=><FavoritePage drawer={this.refs.drawer} homeComponent={this}/>,'Favorite');
         // return <FavoritePage/>;
       case 'aboutTab':
-        return this._navigator(()=><AboutPage drawer={this.refs.drawer}/>,'About');
+        return this._navigator(()=><AboutPage drawer={this.refs.drawer} homeComponent={this}/>,'About');
         // return <FavoritePage/>;
     }
     throw new Error(`Unknown tab ${this.state.selectedTab}`);

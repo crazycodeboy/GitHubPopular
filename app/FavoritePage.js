@@ -70,7 +70,7 @@ var FavoritePage=React.createClass({
     return this.state.dataSource.cloneWithRows(items);
   },
   onSelectRepository:function(projectModel:Object) {
-    var belongNavigator=this.props.navigator;
+    var belongNavigator=this.props.homeComponent.refs.navFavorite;
     var item=projectModel.item;
     belongNavigator.push({
       title:item.full_name,
