@@ -62,6 +62,7 @@ var PopularPage=React.createClass({
     for(var i=0,len=items.length;i<len;i++){
       projectModels.push(new ProjectModel(items[i],this.checkFavorite(items[i])));
     }
+    if(!this||!this.isMounted())return;
     this.setState({
       isLoading:false,
       isLodingFail:false,
@@ -71,6 +72,7 @@ var PopularPage=React.createClass({
   getFavoriteKeys(isFlush:boolean){//获取本地用户收藏的ProjectItem
     favoriteDao.getFavoriteKeys().then((keys)=>{
       if(keys){
+        if(!this||!this.isMounted())return;
         this.setState({
           favoritKeys:keys
         })
@@ -85,12 +87,14 @@ var PopularPage=React.createClass({
     return API_URL+(category==='ALL'? 'stars:>1':category)+QUERY_STR;
   },
   fetchCache(){
+    if(!this||!this.isMounted())return;
     this.setState({
       isLoading:true,
       isLodingFail:false,
     });
     respositoryDao.getRespository(this.props.tabLabel).then((items)=>{
       if(items){
+        if(!this||!this.isMounted())return;
         this.setState({
           items:items
         })
@@ -101,6 +105,7 @@ var PopularPage=React.createClass({
     });
   },
   loadData:function(){
+    if(!this||!this.isMounted())return;
     this.setState({
       isLoading:true,
       isLodingFail:false,
@@ -108,11 +113,13 @@ var PopularPage=React.createClass({
     fetch(this.genFetchUrl(this.props.tabLabel))
     .then((response)=>response.json())
     .catch((error)=>{
+      if(!this||!this.isMounted())return;
       this.setState({
         isLoading:false,
         isLodingFail:true,
       });
     }).then((responseData)=>{
+      if(!this||!this.isMounted())return;
       this.setState({
         items:responseData.items?responseData.items:[]
       })
