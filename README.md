@@ -1,5 +1,8 @@
 # GitHubPopular
-This is a GitHub most popular repositories viewer with React Native.
+This is a GitHub most popular repositories viewer with React Native.  
+## DownLoad APP  
+Android:  
+[GitHubPopular-release-v1.0.0.apk](https://raw.githubusercontent.com/crazycodeboy/GitHubPopular/master/apk/GitHubPopular-release-v1.0.0.apk)
 ## How does it look like?
 iOS:  
 ![](./screenshot/GitHubPopular Preview-iOS.gif)  
