@@ -2,12 +2,13 @@
 This is a GitHub most popular repositories viewer with React Native.  
 ## DownLoad APP  
 Android:  
-[GitHubPopular-release-v1.0.0.apk](https://raw.githubusercontent.com/crazycodeboy/GitHubPopular/master/apk/GitHubPopular-release-v1.0.0.apk)
+[GitHubPopular-release-v1.0.0.apk](https://raw.githubusercontent.com/crazycodeboy/GitHubPopular/master/resource/apk/GitHubPopular-release-v1.0.0.apk)  
+![GitHubPopular-release-v1.0.0-Android](./resource/apk/GitHubPopular-release-v1.0.0-Android.png)  
 ## How does it look like?
 iOS:  
-![](./screenshot/GitHubPopular Preview-iOS.gif)  
+![GitHubPopular Preview-iOS](./resource/screenshot/GitHubPopular Preview-iOS.gif)  
 Android:  
-![](./screenshot/GitHubPopular Preview-Android.gif)  
+![GitHubPopular Preview-Android](./resource/screenshot/GitHubPopular Preview-Android.gif)  
 ## How to run
 
 1. Prepare your environment: [Requirements](http://facebook.github.io/react-native/docs/getting-started.html#requirements)
