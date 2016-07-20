@@ -11,6 +11,7 @@ var{
   StyleSheet,
   WebView,
   Platform,
+  BackAndroid,
   Text,
   View,
 }=ReactNative;
@@ -18,6 +19,7 @@ var NavigationBar=require('./NavigationBar');
 var FavoriteDao=require('./dao/FavoriteDao');
 var favoriteDao = new FavoriteDao();
 var WEBVIEW_REF = 'webview';
+
 var RepositoryDetail=React.createClass({
   getInitialState(){
     return{
@@ -28,8 +30,16 @@ var RepositoryDetail=React.createClass({
       title:this.props.projectModel.item.full_name
     }
   },
+  componentDidMount(){
+    BackAndroid.addEventListener('hardwareBackPress',this.onHardwareBackPress);
+  },
   componentWillUnmount:function(){
     if (this.props.parentComponent)this.props.parentComponent.updateFavorite();
+    BackAndroid.removeEventListener('hardwareBackPress',this.onHardwareBackPress);
+  },
+  onHardwareBackPress(){
+    this.onLeftButtonClick();
+    return true;
   },
   setFavoriteState(isFavorite:boolean){
     this.setState({
