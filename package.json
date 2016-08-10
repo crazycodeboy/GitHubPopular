@@ -9,5 +9,8 @@
     "react": "15.2.1",
     "react-native": "0.29.1",
     "react-native-scrollable-tab-view": "^0.5.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4"
   }
 }
