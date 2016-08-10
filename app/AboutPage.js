@@ -15,7 +15,7 @@ import {
     View,
 } from 'react-native'
 import NavigationBar from './NavigationBar'
-class AboutPage extends Component {
+export default class AboutPage extends Component {
     render() {
         var navigationBar = Platform.OS === "android" ?
             <NavigationBar
@@ -104,4 +104,3 @@ const styles = StyleSheet.create({
         color: 'dodgerblue', fontSize: 13, textDecorationLine: 'underline'
     },
 })
-module.exports = AboutPage
