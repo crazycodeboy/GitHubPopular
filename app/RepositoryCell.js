@@ -47,7 +47,6 @@ var RespositoryCell = React.createClass({
     // }
     return (
       <TouchableElement
-        ref='test'
         onPress={this.props.onSelect}
         onShowUnderlay={this.props.onHighlight}
         underlayColor='lightgreen'
