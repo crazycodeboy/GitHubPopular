@@ -17,7 +17,7 @@ var {
 } = ReactNative;
 var RepositoryCell=require('./RepositoryCell')
 var dismissKeyboard=require('dismissKeyboard')
-var RepositoryDetail=require('./RepositoryDetail')
+import RepositoryDetail from './RepositoryDetail'
 var FavoriteDao=require('./dao/FavoriteDao')
 var RespositoryDao=require('./dao/RespositoryDao')
 var ProjectModel=require('./model/ProjectModel')
