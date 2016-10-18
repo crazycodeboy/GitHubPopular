@@ -1,0 +1,28 @@
+{
+  "items": [
+    "RNStudyNotes",
+    "GitHubPopular",
+    "TakePhoto",
+    "react-native-awesome",
+    "GroupListView",
+    "react-native-check-box",
+    "react-native-easy-toast",
+    "PUtils",
+    "IncrementalUpdate",
+    "BreakPointUploadUtil"
+  ],
+  "info": {
+    "html_url": "https://github.com/crazycodeboy/",
+    "url": "https://api.github.com/repos/crazycodeboy/",
+    "currentRepoUrl": "https://api.github.com/repos/crazycodeboy/GitHubPopular"
+  },
+  "author": {
+    "name": "CrazyCodeBoy",
+    "description": "专注于移动开发，分享知识，共享快乐。",
+    "avatar": "http://avatar.csdn.net/1/1/E/1_fengyuzhengfan.jpg",
+    "backgroundImg": "http://www.cboy.me/io/GitHubPopular/img/for_githubpopular_about_me.jpg",
+    "avatar1": "http://www.cboy.me/io/GitHubPopular/img/ic_app.png",
+    "backgroundImg1": "http://www.rui2.net/uploadfile/output/2015/0322/44b845bf8ae757a2.jpg",
+    "url": "http://www.cboy.me/"
+  }
+}

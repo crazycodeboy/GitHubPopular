@@ -1,0 +1,23 @@
+{
+  "name": "GitHubPopular",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "react": "15.3.0",
+    "react-native": "0.32.0",
+    "react-native-check-box": "^1.0.0",
+    "react-native-easy-toast": "^1.0.2",
+    "react-native-htmlview": "^0.5.0",
+    "react-native-parallax-scroll-view": "^0.19.0",
+    "react-native-scrollable-tab-view": "^0.5.3",
+    "react-native-sortable-listview": "^0.1.1",
+    "react-native-splash-screen": "^1.0.9",
+    "react-native-tab-navigator": "^0.3.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4"
+  }
+}
