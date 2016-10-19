@@ -23,8 +23,8 @@
 
 ## 下载安装
 
-![下载](https://raw.githubusercontent.com/crazycodeboy/crazycodeboy.github.io/master/io/GitHubPopular/img/baidushoujizhushou.png)[前往下载](http://sj.qq.com/myapp/detail.htm?apkName=com.jph.githubpopular)
-![下载](https://raw.githubusercontent.com/crazycodeboy/crazycodeboy.github.io/master/io/GitHubPopular/img/yingyingbao.png)[前往下载](http://shouji.baidu.com/software/10123273.html)
+![下载](https://raw.githubusercontent.com/crazycodeboy/crazycodeboy.github.io/master/io/GitHubPopular/img/baidushoujizhushou.png)[前往下载](http://shouji.baidu.com/software/10123273.html)
+![下载](https://raw.githubusercontent.com/crazycodeboy/crazycodeboy.github.io/master/io/GitHubPopular/img/yingyingbao.png)[前往下载](http://sj.qq.com/myapp/detail.htm?apkName=com.jph.githubpopular)
 
 
 ## 预览图
