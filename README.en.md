@@ -24,6 +24,13 @@ This is a GitHub most popular repositories viewer with React Native.
 ![DownLoad](https://raw.githubusercontent.com/crazycodeboy/crazycodeboy.github.io/master/io/GitHubPopular/img/baidushoujizhushou.png)[Go to download](http://sj.qq.com/myapp/detail.htm?apkName=com.jph.githubpopular)
 ![DownLoad](https://raw.githubusercontent.com/crazycodeboy/crazycodeboy.github.io/master/io/GitHubPopular/img/yingyingbao.png)[Go to download](http://shouji.baidu.com/software/10123273.html)
 
+## Screenshot
+
+![GitHub Popular](https://raw.githubusercontent.com/crazycodeboy/GitHubPopular/master/resource/screenshot/GitHubPopular-1.jpg)
+
+![GitHub Popular](https://raw.githubusercontent.com/crazycodeboy/GitHubPopular/master/resource/screenshot/GitHubPopular-2.jpg)
+
+![GitHub Popular](https://raw.githubusercontent.com/crazycodeboy/GitHubPopular/master/resource/screenshot/GitHubPopular-3.jpg)
 
 ## Running and debugging
 

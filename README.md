@@ -29,11 +29,11 @@
 
 ## 预览图
 
-![GitHub Popular](./resource/screenshot/GitHubPopular-1.jpg)
+![GitHub Popular](https://raw.githubusercontent.com/crazycodeboy/GitHubPopular/master/resource/screenshot/GitHubPopular-1.jpg)
 
-![GitHub Popular](./resource/screenshot/GitHubPopular-2.jpg)
+![GitHub Popular](https://raw.githubusercontent.com/crazycodeboy/GitHubPopular/master/resource/screenshot/GitHubPopular-2.jpg)
 
-![GitHub Popular](./resource/screenshot/GitHubPopular-3.jpg)
+![GitHub Popular](https://raw.githubusercontent.com/crazycodeboy/GitHubPopular/master/resource/screenshot/GitHubPopular-3.jpg)
 
 # 运行调试
 
