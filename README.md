@@ -2,7 +2,7 @@
 
 这是一个用来查看GitHub最受欢迎与最热项目的App,它基于React Native支持Android和iOS双平台。
 
-[English](./README.en.md)
+[English](https://github.com/crazycodeboy/GitHubPopular/blob/master/README.en.md)
 
 ## 目录
 

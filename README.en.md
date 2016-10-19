@@ -1,6 +1,8 @@
 # GitHubPopular
 This is a GitHub most popular repositories viewer with React Native.  
 
+[中文](https://github.com/crazycodeboy/GitHubPopular)
+
 ## Contents
 
 * [Features](#features)
