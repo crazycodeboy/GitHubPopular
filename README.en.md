@@ -1,4 +1,9 @@
 # GitHubPopular
+
+[ ![Download](https://img.shields.io/badge/Download-v1.0.1-ff69b4.svg) ](http://shouji.baidu.com/software/10123273.html)
+[ ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/crazycodeboy/GitHubPopular/pulls)[ ![GitHubPopular release](https://img.shields.io/github/release/crazycodeboy/GitHubPopular.svg?maxAge=2592000?style=flat-square)](https://github.com/crazycodeboy/GitHubPopular/releases)
+[ ![语言 中文](https://img.shields.io/badge/语言-中文-red.svg)](https://github.com/crazycodeboy/GitHubPopular)
+
 This is a GitHub most popular repositories viewer with React Native.  
 
 [中文](https://github.com/crazycodeboy/GitHubPopular)
