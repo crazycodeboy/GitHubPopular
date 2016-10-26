@@ -1,8 +1,11 @@
 # GitHub Popular
 
+[![Download](https://img.shields.io/badge/Download-v1.0.1-ff69b4.svg) ](http://shouji.baidu.com/software/10123273.html)
+[ ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/crazycodeboy/GitHubPopular/pulls)[ ![GitHubPopular release](https://img.shields.io/github/release/crazycodeboy/GitHubPopular.svg?maxAge=2592000?style=flat-square)](https://github.com/crazycodeboy/GitHubPopular/releases)
+[ ![language English](https://img.shields.io/badge/language-English-feb252.svg)](https://github.com/crazycodeboy/GitHubPopular/blob/master/README.en.md)
+
 这是一个用来查看GitHub最受欢迎与最热项目的App,它基于React Native支持Android和iOS双平台。
 
-[English](https://github.com/crazycodeboy/GitHubPopular/blob/master/README.en.md)
 
 ## 目录
 
