@@ -1,6 +1,6 @@
 # GitHub Popular
 
-[![Download](https://img.shields.io/badge/Download-v1.0.1-ff69b4.svg) ](http://shouji.baidu.com/software/10123273.html)
+[![Download](https://img.shields.io/badge/Download-v1.0.1-ff69b4.svg) ](http://www.devio.org/io/GitHubPopular/)
 [ ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/crazycodeboy/GitHubPopular/pulls)[ ![GitHubPopular release](https://img.shields.io/github/release/crazycodeboy/GitHubPopular.svg?maxAge=2592000?style=flat-square)](https://github.com/crazycodeboy/GitHubPopular/releases)
 [ ![language English](https://img.shields.io/badge/language-English-feb252.svg)](https://github.com/crazycodeboy/GitHubPopular/blob/master/README.en.md)
 
@@ -26,8 +26,9 @@
 
 ## 下载安装
 
-![下载](https://raw.githubusercontent.com/crazycodeboy/crazycodeboy.github.io/master/io/GitHubPopular/img/baidushoujizhushou.png)[前往下载](http://shouji.baidu.com/software/10123273.html)
-![下载](https://raw.githubusercontent.com/crazycodeboy/crazycodeboy.github.io/master/io/GitHubPopular/img/yingyingbao.png)[前往下载](http://sj.qq.com/myapp/detail.htm?apkName=com.jph.githubpopular)
+[![App Store](http://www.devio.org/io/GitHubPopular/img/app%20store%20icon.png)](https://itunes.apple.com/cn/app/github-popular/id1169908238?l=zh&ls=1&mt=8)
+[![百度手机助手](https://raw.githubusercontent.com/crazycodeboy/crazycodeboy.github.io/master/io/GitHubPopular/img/baidushoujizhushou.png)](http://shouji.baidu.com/software/10123273.html)
+[![应用宝](https://raw.githubusercontent.com/crazycodeboy/crazycodeboy.github.io/master/io/GitHubPopular/img/yingyingbao.png)](http://sj.qq.com/myapp/detail.htm?apkName=com.jph.githubpopular)
 
 
 ## 预览图

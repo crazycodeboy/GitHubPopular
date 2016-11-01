@@ -1,12 +1,10 @@
 # GitHubPopular
 
-[ ![Download](https://img.shields.io/badge/Download-v1.0.1-ff69b4.svg) ](http://shouji.baidu.com/software/10123273.html)
+[![Download](https://img.shields.io/badge/Download-v1.0.1-ff69b4.svg) ](http://www.devio.org/io/GitHubPopular/)
 [ ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/crazycodeboy/GitHubPopular/pulls)[ ![GitHubPopular release](https://img.shields.io/github/release/crazycodeboy/GitHubPopular.svg?maxAge=2592000?style=flat-square)](https://github.com/crazycodeboy/GitHubPopular/releases)
 [ ![语言 中文](https://img.shields.io/badge/语言-中文-red.svg)](https://github.com/crazycodeboy/GitHubPopular)
 
 This is a GitHub most popular repositories viewer with React Native.  
-
-[中文](https://github.com/crazycodeboy/GitHubPopular)
 
 ## Contents
 
@@ -28,9 +26,9 @@ This is a GitHub most popular repositories viewer with React Native.
 
 ## DownLoad   
 
-![DownLoad](https://raw.githubusercontent.com/crazycodeboy/crazycodeboy.github.io/master/io/GitHubPopular/img/baidushoujizhushou.png)[Go to download](http://sj.qq.com/myapp/detail.htm?apkName=com.jph.githubpopular)
-![DownLoad](https://raw.githubusercontent.com/crazycodeboy/crazycodeboy.github.io/master/io/GitHubPopular/img/yingyingbao.png)[Go to download](http://shouji.baidu.com/software/10123273.html)
-
+[![App Store](http://www.devio.org/io/GitHubPopular/img/app%20store%20icon.png)](https://itunes.apple.com/cn/app/github-popular/id1169908238?l=zh&ls=1&mt=8)
+[![百度手机助手](https://raw.githubusercontent.com/crazycodeboy/crazycodeboy.github.io/master/io/GitHubPopular/img/baidushoujizhushou.png)](http://shouji.baidu.com/software/10123273.html)
+[![应用宝](https://raw.githubusercontent.com/crazycodeboy/crazycodeboy.github.io/master/io/GitHubPopular/img/yingyingbao.png)](http://sj.qq.com/myapp/detail.htm?apkName=com.jph.githubpopular)
 ## Screenshot
 
 ![GitHub Popular](https://raw.githubusercontent.com/crazycodeboy/GitHubPopular/master/resource/screenshot/GitHubPopular-1.jpg)
