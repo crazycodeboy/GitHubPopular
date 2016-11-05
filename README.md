@@ -1,6 +1,6 @@
 # GitHub Popular
 
-[![Download](https://img.shields.io/badge/Download-v1.0.1-ff69b4.svg) ](http://www.devio.org/io/GitHubPopular/)
+[![Download](https://img.shields.io/badge/Download-v1.0.3-ff69b4.svg) ](http://www.devio.org/io/GitHubPopular/)
 [ ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/crazycodeboy/GitHubPopular/pulls)[ ![GitHubPopular release](https://img.shields.io/github/release/crazycodeboy/GitHubPopular.svg?maxAge=2592000?style=flat-square)](https://github.com/crazycodeboy/GitHubPopular/releases)
 [ ![language English](https://img.shields.io/badge/language-English-feb252.svg)](https://github.com/crazycodeboy/GitHubPopular/blob/master/README.en.md)
 
