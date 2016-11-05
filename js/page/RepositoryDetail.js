@@ -96,6 +96,7 @@ export default class RepositoryDetail extends Component {
         </TouchableOpacity>
     }
     render() {
+        let titleLayoutStyle=this.state.title.length>20?{paddingRight:30}:null;
         return (
             <View style={styles.container}>
                 <NavigationBar
@@ -104,6 +105,7 @@ export default class RepositoryDetail extends Component {
                     popEnabled={false}
                     style={this.state.theme.styles.navBar}
                     title={this.state.title}
+                    titleLayoutStyle={titleLayoutStyle}
                     rightButton={this.renderRightButton()}
                 />
                 <WebView

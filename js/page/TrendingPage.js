@@ -24,7 +24,6 @@ import FavoriteDao from "../expand/dao/FavoriteDao";
 import CustomTheme from "./my/CustomTheme"
 import DataRepository, {FLAG_STORAGE} from '../expand/dao/DataRepository'
 import ProjectModel from "../model/ProjectModel";
-import Trending from "../expand/trending/GitHubTrending";
 import TimeSpan from '../model/TimeSpan'
 import LanguageDao, {FLAG_LANGUAGE}  from '../expand/dao/LanguageDao'
 import {FLAG_TAB} from './HomePage'
@@ -34,7 +33,6 @@ const API_URL = 'https://github.com/trending/'
 var projectModels = [];
 var favoriteDao = new FavoriteDao(FLAG_STORAGE.flag_trending)
 var dataRepository=new DataRepository(FLAG_STORAGE.flag_trending)
-var trending = new Trending()
 var timeSpanTextArray = [new TimeSpan('Today', 'since=daily'),
 new TimeSpan('This Week', 'since=weekly'), new TimeSpan('This Month', 'since=monthly')]
 

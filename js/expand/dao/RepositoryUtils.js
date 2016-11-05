@@ -10,7 +10,7 @@ import {
     AsyncStorage,
 } from 'react-native';
 import config from '../../../res/data/Config.json'
-const URL = 'http://cboy.me/io/GitHubPopular/json/Config.json';
+const URL = 'http://www.devio.org/io/GitHubPopular/json/Config.json';
 var repositoryUtils;
 export default class RepositoryUtils {
     constructor(isInit) {

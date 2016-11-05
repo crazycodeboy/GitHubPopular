@@ -37,6 +37,7 @@ const StatusBarShape = {
 export default class NavigationBar extends Component {
     static propTypes = {
         style: View.propTypes.style,
+        titleLayoutStyle:View.propTypes.style,
         navigator: PropTypes.object,
         leftButtonTitle: PropTypes.string,
         popEnabled: PropTypes.bool,
@@ -107,17 +108,17 @@ export default class NavigationBar extends Component {
     render() {
         let statusBar = !this.props.statusBar.hidden ?
             <View style={styles.statusBar}>
-                <StatusBar {...this.props.statusBar} style={styles.statusBar}/>
+                <StatusBar {...this.props.statusBar} barStyle="light-content" style={styles.statusBar}/>
             </View>: null;
 
         let titleView = this.props.titleView ? this.props.titleView :
-            <Text style={styles.title}>{this.props.title}</Text>;
+            <Text style={styles.title} ellipsizeMode="head" numberOfLines={1} >{this.props.title}</Text>;
 
         let content = this.props.hide ? null :
             <View style={styles.navBar}>
                 {/*{this.leftView()}*/}
                 {this.getButtonElement(this.props.leftButton)}
-                <View style={styles.navBarTitleContainer}>
+                <View style={[styles.navBarTitleContainer,this.props.titleLayoutStyle]}>
                     {titleView}
                 </View>
                 {/*{this.rightView()}*/}
@@ -183,9 +184,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         position: 'absolute',
-        left: 60,
+        left: 40,
         top: 0,
-        right: 60,
+        right: 40,
         bottom: 0,
     },
     title: {
@@ -198,5 +199,6 @@ const styles = StyleSheet.create({
     },
     statusBar: {
         height: Platform.OS === 'ios' ? STATUS_BAR_HEIGHT:0,
+
     },
 })
