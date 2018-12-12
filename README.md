@@ -18,7 +18,7 @@
 
 ## 能够Get到的技术
 
-[![能够Get到的技术](https://raw.githubusercontent.com/crazycodeboy/GitHubPopular/master/resource/GitHubPopular/React-Native+Redux.jpg)](http://coding.imooc.com/class/304.html)
+[![能够Get到的技术](https://raw.githubusercontent.com/crazycodeboy/GitHubPopular/master/resource/React-Native%2BRedux.jpg)](http://coding.imooc.com/class/304.html)
 
 ## 功能与特性
 

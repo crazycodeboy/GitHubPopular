@@ -4,15 +4,19 @@
 [ ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/crazycodeboy/GitHubPopular/pulls)[ ![GitHubPopular release](https://img.shields.io/github/release/crazycodeboy/GitHubPopular.svg?maxAge=2592000?style=flat-square)](https://github.com/crazycodeboy/GitHubPopular/releases)
 [ ![语言 中文](https://img.shields.io/badge/语言-中文-red.svg)](https://github.com/crazycodeboy/GitHubPopular)
 
-This is a GitHub most popular repositories viewer with React Native.  
+This is a GitHub most popular repositories viewer with React Native. [#The latest version of React Native+Redux builds here☞#](http://coding.imooc.com/class/304.html)
 
 ## Contents
 
+* [Used technology](#used-technology)
 * [Features](#features)
 * [DownLoad](#downLoad)
 * [Screenshot](#screenshot)
 * [Running and debugging](#running-and-debugging)
-* [ToDo](#todo)
+
+## Used technology
+
+[![Used technology](https://raw.githubusercontent.com/crazycodeboy/GitHubPopular/master/resource/React-Native%2BRedux.jpg)](http://coding.imooc.com/class/304.html)
 
 ## Features
 
@@ -45,12 +49,3 @@ This is a GitHub most popular repositories viewer with React Native.
 4. run `react-native run-ios` or `react-native run-android`.
 5. Yeah. You make it.
 
-## ToDo
-
-**V2.0 planning**
-
-- [ ] Sliding hide NavBar
-- [ ] Text support large, medium and small
-- [ ] Support night mode
-- [ ] Use Redux
-- [ ] i18 internationalization
