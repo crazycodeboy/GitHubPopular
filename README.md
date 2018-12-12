@@ -4,16 +4,21 @@
 [ ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/crazycodeboy/GitHubPopular/pulls)[ ![GitHubPopular release](https://img.shields.io/github/release/crazycodeboy/GitHubPopular.svg?maxAge=2592000?style=flat-square)](https://github.com/crazycodeboy/GitHubPopular/releases)
 [ ![language English](https://img.shields.io/badge/language-English-feb252.svg)](https://github.com/crazycodeboy/GitHubPopular/blob/master/README.en.md)
 
-这是一个用来查看GitHub最受欢迎与最热项目的App,它基于React Native支持Android和iOS双平台。[#适配RN最新版在这里☞# http://coding.imooc.com/class/89.html](http://coding.imooc.com/class/89.html)
+这是一个用来查看GitHub最受欢迎与最热项目的App,它基于React Native支持Android和iOS双平台。[#最新版React Native+Redux打造点这里☞#](http://coding.imooc.com/class/304.html)
 
 
 ## 目录
 
+* [能够Get到的技术](#能够Get到的技术)
 * [功能与特性](#功能与特性)
 * [下载安装](#下载安装)
 * [预览图](#预览图)
 * [运行调试](#运行调试)
-* [ToDo](#todo)
+
+
+## 能够Get到的技术
+
+[![能够Get到的技术](https://raw.githubusercontent.com/crazycodeboy/GitHubPopular/master/resource/GitHubPopular/React-Native+Redux.jpg)](http://coding.imooc.com/class/304.html)
 
 ## 功能与特性
 
@@ -47,16 +52,6 @@
 4. 然后运行 `react-native run-ios` 或 `react-native run-android`。
 5. Ok,有问题可以提[issues](https://github.com/crazycodeboy/GitHubPopular/issues)出来
 
-
-## ToDo
-
-**V2.0规划**
-
-- [ ] 上滑自动隐藏NavBar
-- [ ] 文字支持大、中、小
-- [ ] 夜间模式
-- [ ] 使用Redux
-- [ ] i18国际化
 
 
 
